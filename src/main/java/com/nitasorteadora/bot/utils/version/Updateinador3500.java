@@ -5,6 +5,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.nitasorteadora.bot.Main;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.plugin.PluginDescriptionFile;
 
 import java.io.InputStream;
@@ -22,6 +23,10 @@ public class Updateinador3500 {
         PluginDescriptionFile pdf = plugin.getDescription();
         if(!latestversion.equalsIgnoreCase(pdf.getVersion())) {
             Bukkit.getLogger().warning("Se ha encontrado una nueva versión: " + latestversion + ". Usando actualmente: " + pdf.getVersion());
+            Bukkit.getServer().broadcastMessage(ChatColor.RED + "[NitaBot] " + ChatColor.GOLD + "Hay una nueva versión disponible");
+            Bukkit.getServer().broadcastMessage(ChatColor.GREEN + "Usando actualmente: " + ChatColor.GOLD + pdf.getVersion());
+            Bukkit.getServer().broadcastMessage(ChatColor.GREEN + "Nueva versión: "+ ChatColor.GOLD + latestversion);
+
         } else {
             Bukkit.getLogger().info("Se está utilizando la última versión!");
         }

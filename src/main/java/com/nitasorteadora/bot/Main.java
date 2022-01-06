@@ -124,7 +124,9 @@ public class Main extends JavaPlugin implements Listener {
         pm.registerEvents(new JoinEvent(this), this);
         pm.registerEvents(new DeathEvent(),this);
         this.getCommand("verificar").setExecutor(new Verificar());
-        new Updateinador3500(this).check();
+        Bukkit.getScheduler().scheduleSyncRepeatingTask(this, () ->{
+            new Updateinador3500(this).check();
+        }, 1200L, 108000L);
         //new LowTps(this).lowTPSWarn();
     }
     @Override
