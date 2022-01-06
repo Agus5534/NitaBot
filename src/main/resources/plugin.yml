@@ -1,0 +1,17 @@
+main: com.nitasorteadora.bot.Main
+name: NitaSorteadora
+version: 2.0.0.23
+description: Bot del weekend!
+api-version: 1.16
+author: Agus5534
+commands:
+  verificar:
+    description: Comando para linkear el bot de Discord con el Minecraft
+    usage: /<command> [code]
+    aliases:
+      - link
+      - linkacc
+      - linkaccount
+      - acclink
+      - acc
+      - account
