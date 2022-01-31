@@ -187,3 +187,4 @@ resources/sqldata.yml
 /src/main/resources/sqldata.yml
 /secretas/
 /src/main/java/com/nitasorteadora/bot/cartas/embeds/secretas
+/src/main/java/com/nitasorteadora/bot/cartas/embeds/secretas/season3/
