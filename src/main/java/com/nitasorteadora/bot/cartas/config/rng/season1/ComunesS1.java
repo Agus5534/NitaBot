@@ -16,17 +16,9 @@ public class ComunesS1 {
                     Zijhyan.Zij(commandEvent);
                 } else {
                     if (random < 220) {
-                        Zeqia.Zeq(commandEvent);
+                        Evil.Evl(commandEvent);
                     } else {
-                        if (random < 275) {
-                            Soul.Sl(commandEvent);
-                        } else {
-                            if (random < 330) {
-                                Evil.Evl(commandEvent);
-                            } else {
-                                    RarasS1.RarS1(commandEvent);
-                                }
-                            }
+                        RarasS1.RarS1(commandEvent);
                         }
                     }
                 }

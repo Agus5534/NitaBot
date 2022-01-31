@@ -2,10 +2,11 @@ package com.nitasorteadora.bot.cartas.config.rng.season1;
 import com.jagrosh.jdautilities.command.CommandEvent;
 import com.nitasorteadora.bot.cartas.embeds.epicas.season1.*;
 import com.nitasorteadora.bot.cartas.embeds.epicas.season2.ConnG;
+import com.nitasorteadora.bot.cartas.embeds.epicas.season2.Rufk;
 
 public class EpicasS1 {
     public static void EpicS1(CommandEvent commandEvent) {
-        int random = (int) (Math.random() * 81 + 1);
+        int random = (int) (Math.random() * 64 + 1);
         if(random < 7){
             Nita.Nt(commandEvent);
         } else {
@@ -28,25 +29,19 @@ public class EpicasS1 {
                                     Iki.Ik(commandEvent);
                                 } else {
                                     if (random < 56) {
-                                        Celestial.Cel(commandEvent);
-                                    } else {
+                                        ConnG.Conn(commandEvent);
+                                } else {
                                         if(random < 63) {
-                                            Juanjo.Juanj(commandEvent);
+                                            Rufk.ruf(commandEvent);
                                         } else {
-                                            if(random < 80) {
-                                                ConnG.Conn(commandEvent);
-                                            } else {
-                                                LegendariasS1.LegS1(commandEvent);
-                                                }
-                                            }
+                                            LegendariasS1.LegS1(commandEvent);
                                         }
-                                    }
-                                }
-                            }
-
+                               }
+                           }
                         }
-                    }
-
+                      }
+                     }
+                   }
                 }
             }
         }
