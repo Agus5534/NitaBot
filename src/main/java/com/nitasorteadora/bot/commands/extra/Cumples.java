@@ -48,6 +48,7 @@ import static com.nitasorteadora.bot.utils.cartashelper.RemovedReset.resetdawe;
 
 public class Cumples extends Command {
     private Main plugin;
+    private boolean locked = true;
     public Cumples(Main plugin){
         this.plugin = plugin;
         this.name = "cumpleaños";
@@ -59,6 +60,10 @@ public class Cumples extends Command {
             if(!JDAHandler.executedevonly(commandEvent)) {
                 return;
             }
+        }
+        if(locked) {
+            commandEvent.getChannel().sendMessage("Comando en renovación! Disculpe las molestias").queue();
+            return;
         }
         BlacklistManager blacklistManager = new BlacklistManager(plugin.getConn(), commandEvent.getAuthor().getIdLong());
         try{
