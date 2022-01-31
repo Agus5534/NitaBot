@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static com.nitasorteadora.bot.Main.cartasconfig;
+import static com.nitasorteadora.bot.utils.cartashelper.CartasData.totaldesbloqueadas;
 import static com.nitasorteadora.bot.utils.cartashelper.RemovedReset.resetdawe;
 import static com.nitasorteadora.bot.utils.lucksystem.LuckManager.getLuckfortarget;
 
@@ -79,7 +80,7 @@ public class Perfil extends SlashCommand {
         eb.addField("Rango en el BOT:", badges, false);
         eb.addField("Estado:", estado(target), true);
         eb.addField("Cartas obtenidas: ", String.valueOf(totalidad), true);
-        eb.addField("Cartas Desbloqueadas:", String.valueOf(desbloqueadas + "/47"), true);
+        eb.addField("Cartas Desbloqueadas:", String.valueOf(desbloqueadas + totaldesbloqueadas), true);
         eb.addField("Tokens:", String.valueOf(tokens), true);
         eb.addField("Suerte:",luckidentifiertarget(target), true);
         eb.setThumbnail(target.getUser().getAvatarUrl());
