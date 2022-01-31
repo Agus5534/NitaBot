@@ -1,4 +1,4 @@
-package com.nitasorteadora.bot.cartas.embeds.raras.season2;
+package com.nitasorteadora.bot.cartas.embeds.epicas.season2;
 
 import com.jagrosh.jdautilities.command.CommandEvent;
 import com.nitasorteadora.bot.cartas.config.EmbedHelper;
@@ -14,7 +14,7 @@ public class Rufk implements EmbedHelper {
                 .image("https://cdn.discordapp.com/attachments/818613273813319781/873422021311221800/1elinquieto.jpg")
                 .dbName("CartaRufk.")
                 .season(2)
-                .esRara();
+                .esEpica();
         try {
             carta.build(commandEvent);
         } catch (CreateCardException e) {
