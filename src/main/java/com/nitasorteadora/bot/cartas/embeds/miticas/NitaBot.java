@@ -1,4 +1,4 @@
-package com.nitasorteadora.bot.cartas.embeds.secretas.season3;
+package com.nitasorteadora.bot.cartas.embeds.miticas;
 
 import com.jagrosh.jdautilities.command.CommandEvent;
 import com.nitasorteadora.bot.cartas.config.EmbedHelper;
