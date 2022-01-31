@@ -23,7 +23,7 @@ public class Backup extends Command {
             }
         }
         if(!ConfigHandler.getAdmins().contains(commandEvent.getAuthor().getId())) {
-            commandEvent.getChannel().sendMessage("No eres administrador del bot!");
+            commandEvent.getChannel().sendMessage("No eres administrador del bot!").queue();
         } else {
             try {
                 commandEvent.getChannel().sendMessage("Realizando Backup!").queue();
