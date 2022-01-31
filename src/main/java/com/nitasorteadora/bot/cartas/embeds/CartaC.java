@@ -25,6 +25,8 @@ public enum CartaC {
     INFERNAL("El Loco","Infernal","<:Infernal:864214891149262859>","https://cdn.discordapp.com/attachments/818613273813319781/879874620407300096/1elloco.jpg","CartaInfer.",3,CalidadC.RARA),
     MARIO("El Pokemaníaco","Mario","<:Mario:864214891283349505>","https://cdn.discordapp.com/attachments/818613273813319781/884575253915926588/1elpokemaniaco.jpg","CartaMario.",3,CalidadC.RARA),
     YURI("El Valerense","Yuri","<:Yuri:864214891538677780>","https://cdn.discordapp.com/attachments/818613273813319781/879874807427104768/elvarelense.jpg","CartaYuri.",3,CalidadC.RARA),
+    CARMENED("El Espontáneo","Carmened","<:Carmened:935644590441107556>","https://cdn.discordapp.com/attachments/818995908779835393/936805180731699230/1elespontaneo.jpg","CartaCarmened.",0,CalidadC.RARA),
+    FABO("El Asustadizo","Fabo","<:Fabo:935644590680199179>","https://cdn.discordapp.com/attachments/818995908779835393/936805180408733706/1elasustadizo.jpg","CartaFabo.",0,CalidadC.RARA),
 
     //Epicas
     AUGUSIMPERIAL("El Imperial","AugusImperial","<:Augus:804429263431532605>","https://cdn.discordapp.com/attachments/818613273813319781/871972935185879070/1elimperial.jpg","CartaAugus.",1,CalidadC.EPICA),
