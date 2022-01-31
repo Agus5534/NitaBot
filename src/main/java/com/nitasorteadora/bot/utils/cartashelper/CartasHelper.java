@@ -73,7 +73,7 @@ public class CartasHelper {
         return this;
     }
     public CartasHelper season(int _season) {
-        if(_season >= 1 && _season <= 3) {
+        if(_season >= 0 && _season <= 3) {
             season = _season;
         } else {
             throw new IndexOutOfBoundsException(String.format("No existe la season %s", _season));
@@ -95,7 +95,11 @@ public class CartasHelper {
         imagencalidad = "https://cdn.discordapp.com/attachments/818995908779835393/835349958122143825/raro.png";
         calidad = 'r';
         color = Color.BLUE;
-        footer = "Carta Rara | Season " + season;
+        if(season == 0) {
+            footer = "Carta Rara | Out of season";
+        } else {
+            footer = "Carta Rara | Season " + season;
+        }
         return this;
     }
     public CartasHelper esEpica() {
@@ -119,6 +123,14 @@ public class CartasHelper {
         footer = "Carta Secreta | Season " + season;
         return this;
     }
+    public CartasHelper esMitica() {
+        imagencalidad = "https://nullxd";
+        calidad = 'm';
+        color = Color.BLACK;
+        footer = "Carta Mitica | Season " + season;
+        return this;
+    }
+
 
     public final CartasHelper build(CommandEvent commandEvent) throws CreateCardException {
         title = "¡Carta diaria!";
@@ -175,7 +187,7 @@ public class CartasHelper {
             randomLuck(commandEvent);
         } else if(calidad == 'l') {
         randomLuck2(commandEvent);
-        } else if(calidad == 's') {
+        } else if(calidad == 's' || calidad == 'm') {
         resetLuck(commandEvent);
         } else {
             addLuck(commandEvent, 1);

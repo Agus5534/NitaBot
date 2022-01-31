@@ -73,6 +73,8 @@ public class Cartas extends Command {
         int cayden = 0;
         int laentidad = 0;
         int nitabot = 0;
+        int cfabo = 0;
+        int ccarmened = 0;
         cevil = (int) cartasconfig.get("CartaEvil." + target.getId(), cevil);
         cmagic = (int) cartasconfig.get("CartaMagic." + target.getId(), cmagic);
         cmaurito = (int) cartasconfig.get("CartaMaurito." + target.getId(), cmaurito);
@@ -108,7 +110,8 @@ public class Cartas extends Command {
         cayden = (int) cartasconfig.get("CartaAyden."+target.getId(),cayden);
         laentidad = (int) cartasconfig.get(CartaC.LaEntidad.getDBName()+target.getId(),laentidad);
         nitabot = (int) cartasconfig.get(CartaC.NitaBot.getDBName()+target.getId(),nitabot);
-
+        cfabo = (int) cartasconfig.get("CartaFabo."+target.getId(),cfabo);
+        ccarmened = (int) cartasconfig.get("CartaCarmened."+target.getId(),ccarmened);
         String magic = "El Modder: " + cmagic;
         String maurito = "El Mayor: " + cmaurito;
         String zijhyan = "El Mago Ingeniero: " + czij;
@@ -132,8 +135,11 @@ public class Cartas extends Command {
         String azga = "La Tele: " + cazga;
         String yuri = "El Varelense: " + cyuri;
         String mario = "El Pokemaníaco: " + cmario;
+        String fabo = "El Asustadizo: " + cfabo;
+        String carmened = "El Espontáneo: "+ ccarmened;
 
-        String raras = cuchi + "\n " + uimpi  + "\n " + salvi + "\n " + pato + "\n " + heis + "\n " + infer + "\n " + azga + "\n " + yuri + "\n " + mario;
+        String raras = cuchi + "\n " + uimpi  + "\n "  + salvi + "\n " + pato +  "\n " + heis + "\n " + infer + "\n " + azga + "\n " + yuri + "\n " + mario + "\n " + fabo + "\n " + carmened;
+
 
         String nita = "La Artista: " + cnita;
         String panda = "El Paciente: " + cpanda;
@@ -219,6 +225,8 @@ public class Cartas extends Command {
         int cayden = 0;
         int laentidad = 0;
         int nitabot = 0;
+        int cfabo = 0;
+        int ccarmened = 0;
         cevil = (int) cartasconfig.get("CartaEvil." + commandEvent.getMessage().getAuthor().getId(), cevil);
         cmagic = (int) cartasconfig.get("CartaMagic." + commandEvent.getMessage().getAuthor().getId(), cmagic);
         cmaurito = (int) cartasconfig.get("CartaMaurito." + commandEvent.getMessage().getAuthor().getId(), cmaurito);
@@ -254,6 +262,8 @@ public class Cartas extends Command {
         cayden = (int) cartasconfig.get("CartaAyden."+commandEvent.getMessage().getAuthor().getId(),cayden);
         laentidad = (int) cartasconfig.get(CartaC.LaEntidad.getDBName()+commandEvent.getAuthor().getId(),laentidad);
         nitabot = (int) cartasconfig.get(CartaC.NitaBot.getDBName()+commandEvent.getAuthor().getId(),nitabot);
+        cfabo = (int) cartasconfig.get("CartaFabo."+commandEvent.getAuthor().getId(),cfabo);
+        ccarmened = (int) cartasconfig.get("CartaCarmened."+commandEvent.getAuthor().getId(),ccarmened);
         String magic = "El Modder: " + cmagic;
         String maurito = "El Mayor: " + cmaurito;
         String zijhyan = "El Mago Ingeniero: " + czij;
@@ -278,8 +288,10 @@ public class Cartas extends Command {
         String azga = "La Tele: " + cazga;
         String yuri = "El Varelense: " + cyuri;
         String mario = "El Pokemaníaco: " + cmario;
+        String fabo = "El Asustadizo: " + cfabo;
+        String carmened = "El Espontáneo: "+ ccarmened;
 
-        String raras = cuchi + "\n " + uimpi  + "\n "  + salvi + "\n " + pato +  "\n " + heis + "\n " + infer + "\n " + azga + "\n " + yuri + "\n " + mario;
+        String raras = cuchi + "\n " + uimpi  + "\n "  + salvi + "\n " + pato +  "\n " + heis + "\n " + infer + "\n " + azga + "\n " + yuri + "\n " + mario + "\n " + fabo + "\n " + carmened;
 
         String nita = "La Artista: " + cnita;
         String panda = "El Paciente: " + cpanda;
