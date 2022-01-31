@@ -1,9 +1,11 @@
 package com.nitasorteadora.bot.cartas.config.rng.season1;
 import com.jagrosh.jdautilities.command.CommandEvent;
 import com.nitasorteadora.bot.cartas.embeds.epicas.season1.*;
+import com.nitasorteadora.bot.cartas.embeds.epicas.season2.ConnG;
+
 public class EpicasS1 {
     public static void EpicS1(CommandEvent commandEvent) {
-        int random = (int) (Math.random() * 64 + 1);
+        int random = (int) (Math.random() * 81 + 1);
         if(random < 7){
             Nita.Nt(commandEvent);
         } else {
@@ -31,7 +33,11 @@ public class EpicasS1 {
                                         if(random < 63) {
                                             Juanjo.Juanj(commandEvent);
                                         } else {
-                                            LegendariasS1.LegS1(commandEvent);
+                                            if(random < 80) {
+                                                ConnG.Conn(commandEvent);
+                                            } else {
+                                                LegendariasS1.LegS1(commandEvent);
+                                                }
                                             }
                                         }
                                     }

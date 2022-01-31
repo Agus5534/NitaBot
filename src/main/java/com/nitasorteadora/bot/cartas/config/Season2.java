@@ -1,9 +1,9 @@
 package com.nitasorteadora.bot.cartas.config;
 
 import com.jagrosh.jdautilities.command.CommandEvent;
+import com.nitasorteadora.bot.cartas.config.rng.season1.EpicasS1;
 import com.nitasorteadora.bot.cartas.config.rng.season1.LegendariasS1;
 import com.nitasorteadora.bot.cartas.config.rng.season2.ComunesS2;
-import com.nitasorteadora.bot.cartas.config.rng.season2.EpicasS2;
 import com.nitasorteadora.bot.cartas.config.rng.season2.RarasS2;
 
 import static com.nitasorteadora.bot.utils.lucksystem.LuckManager.getLuck;
@@ -35,7 +35,7 @@ public class Season2 {
         } else if(random  < 85) {
             RarasS2.RarS2(commandEvent);
         } else if(random < 97) {
-            EpicasS2.EpicS2(commandEvent);
+            EpicasS1.EpicS1(commandEvent);
         } else if(random < 100) {
             LegendariasS1.LegS1(commandEvent);
         } else {
@@ -49,7 +49,7 @@ public class Season2 {
         } else if(random  < 85) {
             RarasS2.RarS2(commandEvent);
         } else if(random < 97) {
-            EpicasS2.EpicS2(commandEvent);
+            EpicasS1.EpicS1(commandEvent);
         } else if(random < 100) {
             LegendariasS1.LegS1(commandEvent);
         } else {
@@ -63,7 +63,7 @@ public class Season2 {
         } else if(random  < 75) {
             RarasS2.RarS2(commandEvent);
         } else if(random < 97) {
-            EpicasS2.EpicS2(commandEvent);
+            EpicasS1.EpicS1(commandEvent);
         } else if(random < 100) {
             LegendariasS1.LegS1(commandEvent);
         } else {
@@ -77,7 +77,7 @@ public class Season2 {
         } else if(random  < 75) {
             RarasS2.RarS2(commandEvent);
         } else if(random < 92) {
-            EpicasS2.EpicS2(commandEvent);
+            EpicasS1.EpicS1(commandEvent);
         } else if(random < 100) {
             LegendariasS1.LegS1(commandEvent);
         } else {
@@ -91,7 +91,7 @@ public class Season2 {
         } else if(random  < 65) {
             RarasS2.RarS2(commandEvent);
         } else if(random < 89) {
-            EpicasS2.EpicS2(commandEvent);
+            EpicasS1.EpicS1(commandEvent);
         } else if(random < 100) {
             LegendariasS1.LegS1(commandEvent);
         } else {
@@ -105,7 +105,7 @@ public class Season2 {
         } else if(random  < 55) {
             RarasS2.RarS2(commandEvent);
         } else if(random < 80) {
-            EpicasS2.EpicS2(commandEvent);
+            EpicasS1.EpicS1(commandEvent);
         } else if(random < 100) {
             LegendariasS1.LegS1(commandEvent);
         } else {

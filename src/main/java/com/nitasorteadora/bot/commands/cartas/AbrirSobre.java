@@ -9,7 +9,6 @@ import com.nitasorteadora.bot.cartas.config.rng.season1.EpicasS1;
 import com.nitasorteadora.bot.cartas.config.rng.season1.LegendariasS1;
 import com.nitasorteadora.bot.cartas.config.rng.season1.RarasS1;
 import com.nitasorteadora.bot.cartas.config.rng.season2.ComunesS2;
-import com.nitasorteadora.bot.cartas.config.rng.season2.EpicasS2;
 import com.nitasorteadora.bot.cartas.config.rng.season2.RarasS2;
 import com.nitasorteadora.bot.cartas.config.rng.season3.ComunesS3;
 import com.nitasorteadora.bot.cartas.config.rng.season3.LegendariasS3;
@@ -223,7 +222,7 @@ public class AbrirSobre extends Command {
                 if(random >= 85) {
                     RarasS2.RarS2(commandEvent);
                     RarasS2.RarS2(commandEvent);
-                    EpicasS2.EpicS2(commandEvent);
+                    EpicasS1.EpicS1(commandEvent);
                     commandEvent.getChannel().sendMessage(commandEvent.getAuthor().getAsMention() + " Ha abierto un sobre y le ha tocado carta extra!").queue();
                 } else {
                     RarasS2.RarS2(commandEvent);
@@ -261,23 +260,23 @@ public class AbrirSobre extends Command {
         } else if(season <= 66) {
             if(random >= 93) {
                 RarasS2.RarS2(commandEvent);
-                EpicasS2.EpicS2(commandEvent);
+                EpicasS1.EpicS1(commandEvent);
                 LegendariasS1.LegS1(commandEvent);
                 commandEvent.getChannel().sendMessage(commandEvent.getAuthor().getAsMention() + " Ha abierto un sobre y le ha tocado carta extra!").queue();
             } else {
                 RarasS2.RarS2(commandEvent);
-                EpicasS2.EpicS2(commandEvent);
+                EpicasS1.EpicS1(commandEvent);
                 commandEvent.getChannel().sendMessage(commandEvent.getAuthor().getAsMention() + " Ha abierto un sobre!").queue();
             }
         } else {
             if(random >= 93) {
                 RarasS3.RarS3(commandEvent);
-                EpicasS2.EpicS2(commandEvent);
+                EpicasS1.EpicS1(commandEvent);
                 LegendariasS3.LegS3(commandEvent);
                 commandEvent.getChannel().sendMessage(commandEvent.getAuthor().getAsMention() + " Ha abierto un sobre y le ha tocado carta extra!").queue();
             } else {
                 RarasS3.RarS3(commandEvent);
-                EpicasS2.EpicS2(commandEvent);
+                EpicasS1.EpicS1(commandEvent);
                 commandEvent.getChannel().sendMessage(commandEvent.getAuthor().getAsMention() + " Ha abierto un sobre!").queue();
             }
         }
@@ -294,7 +293,7 @@ public class AbrirSobre extends Command {
         } else if(season <= 66) {
             ComunesS2.ComS2(commandEvent);
             RarasS2.RarS2(commandEvent);
-            EpicasS2.EpicS2(commandEvent);
+            EpicasS1.EpicS1(commandEvent);
             LegendariasS1.LegS1(commandEvent);
         } else {
             ComunesS3.ComS3(commandEvent);

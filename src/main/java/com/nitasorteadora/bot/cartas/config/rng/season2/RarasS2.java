@@ -1,6 +1,7 @@
 package com.nitasorteadora.bot.cartas.config.rng.season2;
 
 import com.jagrosh.jdautilities.command.CommandEvent;
+import com.nitasorteadora.bot.cartas.config.rng.season1.EpicasS1;
 import com.nitasorteadora.bot.cartas.embeds.raras.season2.JungleFocus;
 import com.nitasorteadora.bot.cartas.embeds.raras.season2.PatoLand;
 import com.nitasorteadora.bot.cartas.embeds.raras.season2.Rufk;
@@ -21,7 +22,7 @@ public class RarasS2 {
                     if(random < 28) {
                         JungleFocus.Jungle(commandEvent);
                     } else {
-                        EpicasS2.EpicS2(commandEvent);
+                        EpicasS1.EpicS1(commandEvent);
                     }
                 }
             }
