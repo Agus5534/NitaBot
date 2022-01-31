@@ -159,6 +159,7 @@ target/
 /dependency-reduced-pom.xml
 /shelf/
 /workspace.xml
+/.gitignore
 /compiler.xml
 /dbnavigator.xml
 /discord.xml
