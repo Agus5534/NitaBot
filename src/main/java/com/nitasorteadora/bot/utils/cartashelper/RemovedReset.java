@@ -1,17 +1,11 @@
 package com.nitasorteadora.bot.utils.cartashelper;
 
 import com.jagrosh.jdautilities.command.CommandEvent;
-import com.nitasorteadora.bot.Main;
-import com.nitasorteadora.bot.cartas.embeds.CartaC;
 import net.dv8tion.jda.api.entities.Member;
-
-import java.io.IOException;
-
-import static com.nitasorteadora.bot.Main.cartasconfig;
 
 public class RemovedReset {
     public static void removeCarta(String dbName, int cartacant, int tokenpercard, CommandEvent commandEvent, String cardName) {
-        cartasconfig.set(dbName+commandEvent.getAuthor().getId(),0);
+        /*cartasconfig.set(dbName+commandEvent.getAuthor().getId(),0);
         int desbloqueadas = 0;
         int total = 0;
         int tokens = 0;
@@ -36,10 +30,10 @@ public class RemovedReset {
         } catch (IOException e){
             e.printStackTrace();
         }
-
+*/
     }
     public static void resetdawe(CommandEvent commandEvent) {
-        int cartasdawe = 0;
+       /* int cartasdawe = 0;
         int cartasarnick = 0;
         int cartasfirre = 0;
         int cartacel = 0;
@@ -183,11 +177,11 @@ public class RemovedReset {
             }
         }
 
-
+*/
     }
 
     public static void resetdawe(Member target) {
-        int cartasdawe = 0;
+       /* int cartasdawe = 0;
         int cartasarnick = 0;
         int total = 0;
         int tokens = 0;
@@ -243,5 +237,5 @@ public class RemovedReset {
                 e.printStackTrace();
             }
         }
-    }
+    */}
 }
