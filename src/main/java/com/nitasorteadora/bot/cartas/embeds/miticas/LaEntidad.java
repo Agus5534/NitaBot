@@ -1,27 +1,42 @@
 package com.nitasorteadora.bot.cartas.embeds.miticas;
 
 import com.jagrosh.jdautilities.command.CommandEvent;
-import com.nitasorteadora.bot.cartas.config.EmbedHelper;
+import com.nitasorteadora.bot.cartas.embeds.CartaC;
 import com.nitasorteadora.bot.utils.cartashelper.CartasHelper;
 import com.nitasorteadora.bot.utils.exceptions.CreateCardException;
-import net.dv8tion.jda.api.EmbedBuilder;
-
-import static com.nitasorteadora.bot.Main.cartas;
-import static com.nitasorteadora.bot.Main.cartasconfig;
-import static com.nitasorteadora.bot.utils.lucksystem.LuckManager.resetLuck;
 
 public class LaEntidad {
     public static void Entidad(CommandEvent commandEvent) {
-        CartasHelper carta = new CartasHelper(commandEvent);
-        carta.cardName("La Entidad")
-                .author("La Entidad")
-                .emote("<:testemote:892895101527932991>")
-                .image("https://cdn.discordapp.com/attachments/818995908779835393/892876921438875648/1entidad.jpg")
-                .dbName("CartaLaEntidad.")
-                .season(3)
-                .esMitica();
+        CartaC carta = CartaC.LaEntidad;
+        CartasHelper embed = new CartasHelper(commandEvent);
+        embed.cardName(carta.getName())
+                .author(carta.getAuthor())
+                .emote(carta.getEmote())
+                .image(carta.getImage())
+                .dbName(carta.getDBName())
+                .season(carta.getSeason());
+        switch (carta.getCalidad()){
+            case COMUN:
+                embed.esComun();
+                break;
+            case RARA:
+                embed.esRara();
+                break;
+            case EPICA:
+                embed.esEpica();
+                break;
+            case LEGENDARIA:
+                embed.esLegendaria();
+                break;
+            case MITICA:
+                embed.esMitica();
+                break;
+            case SECRETA:
+                embed.esSecreta();
+                break;
+        }
         try {
-            carta.build(commandEvent);
+            embed.build(commandEvent);
         } catch (CreateCardException e) {
             e.printStackTrace();
         }

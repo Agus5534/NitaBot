@@ -1,7 +1,6 @@
 package com.nitasorteadora.bot.cartas.config.rng.season1;
 
 import com.jagrosh.jdautilities.command.CommandEvent;
-import com.nitasorteadora.bot.cartas.embeds.raras.season1.Cneyer;
 import com.nitasorteadora.bot.cartas.embeds.raras.season1.Cuchi;
 import com.nitasorteadora.bot.cartas.embeds.raras.season1.Uimpi;
 
