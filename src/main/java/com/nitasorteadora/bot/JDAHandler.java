@@ -1,7 +1,10 @@
 package com.nitasorteadora.bot;
 
 import com.jagrosh.jdautilities.command.*;
-import com.nitasorteadora.bot.commands.administrativos.*;
+import com.nitasorteadora.bot.commands.administrativos.Backup;
+import com.nitasorteadora.bot.commands.administrativos.DevOnly;
+import com.nitasorteadora.bot.commands.administrativos.GiveToken;
+import com.nitasorteadora.bot.commands.administrativos.Reload;
 import com.nitasorteadora.bot.commands.cartas.AbrirSobre;
 import com.nitasorteadora.bot.commands.cartas.Cartas;
 import com.nitasorteadora.bot.commands.cartas.Dailycard;
@@ -139,7 +142,7 @@ public class JDAHandler {
       // commandSet.add(new DevTest());
         commandSet.add(new DevOnly());
         commandSet.add(new LinkAccount());
-        commandSet.add(new UnlockedChecker());
+        //commandSet.add(new UnlockedChecker());
         commandSet.forEach(commandClient::addCommand);
 
     }

@@ -6,6 +6,7 @@ import com.nitasorteadora.bot.JDAHandler;
 import com.nitasorteadora.bot.cartas.config.Season1;
 import com.nitasorteadora.bot.cartas.config.Season2;
 import com.nitasorteadora.bot.cartas.config.Season3;
+import com.nitasorteadora.bot.utils.UnlockedChecker;
 import net.dv8tion.jda.api.EmbedBuilder;
 
 import java.awt.*;
@@ -24,6 +25,7 @@ public class Dailycard extends Command {
     }
     @Override
     protected void execute(CommandEvent commandEvent) {
+        new UnlockedChecker().runChecker(commandEvent.getMember());
         if(JDAHandler.devonly){
             if(!JDAHandler.executedevonly(commandEvent)) {
                 return;
