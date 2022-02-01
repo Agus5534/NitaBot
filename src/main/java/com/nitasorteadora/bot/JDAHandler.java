@@ -42,10 +42,10 @@ public class JDAHandler {
     }
 
     //IMPORTANTE
-    public boolean devbot = false;
+    public boolean devbot = true;
     //IMPORTANTE
 
-    //PUC SI LEES ESTO, NO ME JUZGUES (Si podes hacer criticas constructivas acerca lo pelotudo que soy uwu)
+    //PUC SI LEES ESTO, NO ME JUZGUES (Si podes hacer criticas constructivas acerca de lo pelotudo que soy uwu)
 
     public final Set<Command> commandSet = new HashSet<>();
     public final Set<SlashCommand> SlashSet = new HashSet<>();
@@ -107,8 +107,8 @@ public class JDAHandler {
         }
     }
     private void initializeCommandClientBuilder(CommandClientBuilder builder) {builder.setPrefix("w/");
-        builder.setActivity(Activity.playing("Oh dios mío"));
-        builder.setCoOwnerIds("247001108038418434", "222859650360541185", "247927675044233216");
+        builder.setActivity(Activity.playing("??/37"));
+        builder.setCoOwnerIds("247001108038418434", "222859650360541185", "247927675044233216","475432942215102465","326879991629479936","508118875192426516");
         builder.setStatus(OnlineStatus.ONLINE);
         builder.setOwnerId(ConfigHandler.getAdmin(0));
         builder.setHelpWord("comandos");

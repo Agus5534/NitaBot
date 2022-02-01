@@ -60,108 +60,81 @@ public class Sobres extends SlashCommand {
         public Buy() {
             this.name = "comprar";
             this.help = "Compra sobres";
-            this.children = new SlashCommand[]{new Comun(),new Raro(), new Epico()};
+            List<OptionData> options = new ArrayList<>();
+            OptionData sobrestype = new OptionData(OptionType.STRING,"sobre","El tipo de sobre que comprarás").setRequired(true);
+            sobrestype.addChoice("Común","Común");
+            sobrestype.addChoice("Raro","Raro");
+            sobrestype.addChoice("Épico","Épico");
+            options.add(sobrestype);
+            options.add(new OptionData(OptionType.INTEGER,"cantidad","Cantidad de sobres que comprarás").setRequired(true));
+            this.options = options;
+            //this.children = new SlashCommand[]{new BuyComun(),new BuyRaro(), new BuyEpico()};
         }
         @Override
         public void execute(SlashCommandEvent event) {
-        }
-        private class Comun extends SlashCommand{
-            public Comun() {
-                this.name = "comun";
-                this.help = "Compra un sobre común";
-                List<OptionData> options = new ArrayList<>();
-                options.add(new OptionData(OptionType.INTEGER,"cantidad","Cantidad de sobres que comprarás").setRequired(true));
-                this.options = options;
+            String option = event.getOption("sobre").getAsString();
+            long cant = event.getOption("cantidad").getAsLong();
+            switch (option){
+                case "Común":
+                    if(new SobresManager().canBuy(SobresType.COMUN,event.getMember(),cant)) {
+                        new SobresManager().giveSobre(SobresType.COMUN, event.getMember(), cant);
+                        event.reply("Has comprado un sobre común correctamente").setEphemeral(true).queue();
+                        break;
+                    } else {
+                        event.reply("No tienes suficientes tokens para comprar este sobre").setEphemeral(true).queue();
+                        break;
+                    }
+                case "Raro":
+                    if(new SobresManager().canBuy(SobresType.RARO, event.getMember(),cant)) {
+                        new SobresManager().giveSobre(SobresType.RARO, event.getMember(),cant);
+                        event.reply("Has comprado un sobre raro correctamente").setEphemeral(true).queue();
+                        break;
+                    } else {
+                        event.reply("No tienes suficientes tokens para comprar este sobre").setEphemeral(true).queue();
+                        break;
+                    }
+                case "Épico":
+                    if(new SobresManager().canBuy(SobresType.EPICO, event.getMember(),cant)) {
+                        new SobresManager().giveSobre(SobresType.EPICO, event.getMember(),cant);
+                        event.reply("Has comprado un sobre épico correctamente").setEphemeral(true).queue();
+                        break;
+                    } else {
+                        event.reply("No tienes suficientes tokens para comprar este sobre").setEphemeral(true).queue();
+                        break;
+                    }
+            }
 
-            }
-            @Override
-            public void execute(SlashCommandEvent event) {
-                long cant = event.getOption("cantidad").getAsLong();
-                if(new SobresManager().canBuy(SobresType.COMUN, event.getMember(),cant)) {
-                    new SobresManager().giveSobre(SobresType.COMUN, event.getMember(),cant);
-                    event.reply("Has comprado un sobre común correctamente").setEphemeral(true).queue();
-                } else {
-                    event.reply("No tienes suficientes tokens para comprar este sobre").setEphemeral(true).queue();
-                }
-            }
         }
-        private class Raro extends SlashCommand {
-            public Raro() {
-                this.name = "raro";
-                this.help = "Compra un sobre raro";
-                List<OptionData> options = new ArrayList<>();
-                options.add(new OptionData(OptionType.INTEGER,"cantidad","Cantidad de sobres que comprarás").setRequired(true));
-                this.options = options;
-            }
-            @Override
-            public void execute(SlashCommandEvent event) {
-                long cant = event.getOption("cantidad").getAsLong();
-                if(new SobresManager().canBuy(SobresType.RARO, event.getMember(),cant)) {
-                    new SobresManager().giveSobre(SobresType.RARO, event.getMember(),cant);
-                    event.reply("Has comprado un sobre raro correctamente").setEphemeral(true).queue();
-                } else {
-                    event.reply("No tienes suficientes tokens para comprar este sobre").setEphemeral(true).queue();
-                }
-            }
-        }
-        private class Epico extends SlashCommand {
-            public Epico() {
-                this.name = "epico";
-                this.help = "Compra un sobre épico";
-                List<OptionData> options = new ArrayList<>();
-                options.add(new OptionData(OptionType.INTEGER,"cantidad","Cantidad de sobres que comprarás").setRequired(true));
-                this.options = options;
-            }
-            @Override
-            public void execute(SlashCommandEvent event) {
-                long cant = event.getOption("cantidad").getAsLong();
-                if(new SobresManager().canBuy(SobresType.EPICO, event.getMember(),cant)) {
-                    new SobresManager().giveSobre(SobresType.EPICO, event.getMember(),cant);
-                    event.reply("Has comprado un sobre épico correctamente").setEphemeral(true).queue();
-                } else {
-                    event.reply("No tienes suficientes tokens para comprar este sobre").setEphemeral(true).queue();
-                }
-            }
-        }
+
     }
     private class Open extends SlashCommand {
         public Open() {
             this.name = "abrir";
             this.help = "Abre un sobre";
-            this.children = new SlashCommand[]{new Comun(), new Raro(), new Epico()};
+            List<OptionData> options = new ArrayList<>();
+            OptionData sobrestype = new OptionData(OptionType.STRING,"sobre","El tipo de sobre que abriras").setRequired(true);
+            sobrestype.addChoice("Común","Común");
+            sobrestype.addChoice("Raro","Raro");
+            sobrestype.addChoice("Épico","Épico");
+            options.add(sobrestype);
+            this.options = options;
+           // this.children = new SlashCommand[]{new Comun(), new Raro(), new Epico()};
         }
         @Override
         public void execute(SlashCommandEvent event) {
-        }
-        private class Comun extends SlashCommand{
-            public Comun() {
-                this.name = "comun";
-                this.help = "Abre un sobre común";
-            }
-            @Override
-            public void execute(SlashCommandEvent event) {
-                new SobresManager().openSobre(SobresType.COMUN, event);
-            }
-        }
-        private class Raro extends SlashCommand{
-            public Raro() {
-                this.name = "raro";
-                this.help = "Abre un sobre raro";
-            }
-            @Override
-            public void execute(SlashCommandEvent event) {
-                new SobresManager().openSobre(SobresType.RARO, event);
+            String option = event.getOption("sobre").getAsString();
+            switch (option){
+                case "Común":
+                    new SobresManager().openSobre(SobresType.COMUN, event);
+                    break;
+                case "Raro":
+                    new SobresManager().openSobre(SobresType.RARO, event);
+                    break;
+                case "Épico":
+                    new SobresManager().openSobre(SobresType.EPICO, event);
+                    break;
             }
         }
-        private class Epico extends SlashCommand {
-            public Epico() {
-                this.name = "epico";
-                this.help = "Abre un sobre épico";
-            }
-            @Override
-            public void execute(SlashCommandEvent event) {
-                new SobresManager().openSobre(SobresType.EPICO, event);
-            }
-        }
+
     }
 }

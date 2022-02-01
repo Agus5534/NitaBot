@@ -44,18 +44,29 @@ public class SobresManager {
         }
 
     }
-
+    public void save(){
+        try{
+            cartasconfig.save(cartas);
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+    }
     public void giveSobre(SobresType sobreType, Member member, long cant) {
         int sobrecount = 0;
         sobrecount = (int) cartasconfig.get(sobreType.getDbName()+member.getId(),sobrecount);
         sobrecount = (int) (sobrecount + cant);
+        int tokens = getTokens(member);
+        tokens = (int) (tokens - (sobreType.getCoste() * cant));
+        cartasconfig.set("Tokens."+member.getId(),tokens);
         cartasconfig.set(sobreType.getDbName()+member.getId(),sobrecount);
+        save();
     }
     public void removeSobre(SobresType sobreType, Member member) {
         int sobrecount = 0;
         sobrecount = (int) cartasconfig.get(sobreType.getDbName()+member.getId(),sobrecount);
         sobrecount--;
         cartasconfig.set(sobreType.getDbName()+member.getId(),sobrecount);
+        save();
     }
     public int getDesbloqueadas(Member member) {
         int desbloqueadas = 0;

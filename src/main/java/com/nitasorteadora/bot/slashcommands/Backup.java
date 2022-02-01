@@ -9,6 +9,7 @@ public class Backup extends SlashCommand {
     public Backup(){
         this.name = "backup";
         this.help = "Haz un backup";
+
     }
     @Override
     public void execute(SlashCommandEvent event) {
