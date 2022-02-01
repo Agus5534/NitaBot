@@ -21,7 +21,7 @@ public class SubXaso implements EmbedHelper {
         eb.setTitle("¡Carta diaria!");
         eb.setDescription("Obtuviste: **El Comediante** <:Sub:871851399628079184>");
         eb.setThumbnail("https://cdn.discordapp.com/attachments/818995908779835393/835349972265205769/epico.png");
-        eb.setImage("https://cdn.discordapp.com/attachments/818613273813319781/871923679825649664/1elcomediante.jpg");
+        eb.setImage("https://cdn.discordapp.com/attachments/818995908779835393/936797199231254619/1elcomediante.jpg");
         eb.setFooter(epicas1footer);
         eb.setColor(colorepico);
         commandEvent.getChannel().sendMessageEmbeds(eb.build()).queue();

@@ -36,7 +36,7 @@ public enum CartaC {
     IVOO("El Turro","Ivoo","<:Ivo:788418435590914058>","https://cdn.discordapp.com/attachments/818613273813319781/872201224819200080/1elturro.jpg","CartaIvo.",1,CalidadC.EPICA),
     LUQUIMC("El Tranquilo","LuquiMC","<:Luqui:851185434284916787>","https://cdn.discordapp.com/attachments/818613273813319781/871973173573324840/1eltranquilo.jpg","CartaLuqui.",1,CalidadC.EPICA),
     NITA("La Artista","Nita","<:Nita:864245827891363871>","https://cdn.discordapp.com/attachments/818613273813319781/871923529573105714/1laartista.jpg","CartaNita.",1,CalidadC.EPICA),
-    SUBXASO("El Comediante","SubXaso","<:Sub:871851399628079184>","https://cdn.discordapp.com/attachments/818613273813319781/871923679825649664/1elcomediante.jpg","CartaSub.",1,CalidadC.EPICA),
+    SUBXASO("El Comediante","SubXaso","<:Sub:871851399628079184>","https://cdn.discordapp.com/attachments/818995908779835393/936797199231254619/1elcomediante.jpg","CartaSub.",1,CalidadC.EPICA),
     THEBOYPANDA("El Paciente","TheBoyPanda","<:Panda:871861308251856936>","https://cdn.discordapp.com/attachments/818613273813319781/871923579388821564/1elpaciente.jpg","CartaPanda.",1,CalidadC.EPICA),
     CONNG("La Editora","ConnG","<:Conn:852972434188795915>","https://cdn.discordapp.com/attachments/818613273813319781/873351022221856768/1laeditora.jpg","CartaConn.",2,CalidadC.EPICA),
     RUFK("El Inquieto","Rufk","<:Rufk:819332353939210241>","https://cdn.discordapp.com/attachments/818613273813319781/873422021311221800/1elinquieto.jpg","CartaRufk.",2,CalidadC.EPICA),
