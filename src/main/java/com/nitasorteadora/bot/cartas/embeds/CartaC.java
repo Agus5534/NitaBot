@@ -1,5 +1,7 @@
 package com.nitasorteadora.bot.cartas.embeds;
 
+import java.util.Arrays;
+
 public enum CartaC {
     //Comunes
     EVIL("El Dasher","Evil","<:Evil:793945486109179904>","https://cdn.discordapp.com/attachments/818613273813319781/872308037484945438/1eldasher.jpg","CartaEvil.",1,CalidadC.COMUN),
@@ -73,4 +75,7 @@ public enum CartaC {
     public String getDBName() { return dbName; }
     public Integer getSeason() { return season; }
     public CalidadC getCalidad() { return calidad; }
+    public static String[] getAll(Class<? extends Enum<?>> e){
+        return Arrays.stream(e.getEnumConstants()).map(Enum::name).toArray(String[]::new);
+    }
 }

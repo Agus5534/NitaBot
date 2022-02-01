@@ -276,7 +276,7 @@ public class Cartas extends Command {
         String goge = "El Referencias: " + cgoge;
         String lexan = "El Distraído: " + clexan;
         String ayden = "El Entusiasta: " + cayden;
-        String comunes = magic + "\n " + maurito + "\n " + zijhyan + "\n " + evil + "\n " + "\n "  + tatu + "\n " + charly + "\n "  + spiker + "\n " + starr + "\n " + flowii +  "\n " + goge + "\n " + lexan + "\n " + ayden;
+        String comunes = magic + "\n " + maurito + "\n " + zijhyan + "\n " + evil + "\n " + tatu + "\n " + charly + "\n "  + spiker + "\n " + starr + "\n " + flowii +  "\n " + goge + "\n " + lexan + "\n " + ayden;
 
         String cuchi = "La Pequeña: " + ccuchi;
         String uimpi = "La Animadora: " + cuimpi;

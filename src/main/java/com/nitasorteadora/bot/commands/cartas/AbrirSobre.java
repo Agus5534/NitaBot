@@ -19,6 +19,7 @@ import java.awt.*;
 import static com.nitasorteadora.bot.Main.cartasconfig;
 
 public class AbrirSobre extends Command {
+    boolean locked = true;
     public AbrirSobre() {
         this.name = "abrirsobre";
         this.cooldown = 10;
@@ -32,6 +33,11 @@ public class AbrirSobre extends Command {
                 return;
             }
         }
+        if(locked) {
+            commandEvent.getChannel().sendMessage("Usa /sobres").queue();
+            return;
+        }
+
         int tokens = 0;
         String[] message = commandEvent.getMessage().getContentRaw().split(" ");
         if(cartasconfig.contains("Tokens."+commandEvent.getMessage().getAuthor().getId())) {

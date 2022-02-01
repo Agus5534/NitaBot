@@ -14,7 +14,8 @@ public class UnlockedChecker extends Command {
         this.help = "Chequea las cartas desbloqueadas de todos y las repará de ser incorrectas";
         this.cooldown = 15;
     }
-    public void execute(CommandEvent commandEvent) {
+    @Override
+    protected void execute(CommandEvent commandEvent) {
         try {
             List<Member> memberList = commandEvent.getJDA().getGuildById("779862254807547926").getMembers();
             for(int i = 0; i < memberList.size();i++) {

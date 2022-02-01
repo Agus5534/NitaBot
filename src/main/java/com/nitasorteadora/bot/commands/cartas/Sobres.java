@@ -12,6 +12,7 @@ import static com.nitasorteadora.bot.Main.cartasconfig;
 import static com.nitasorteadora.bot.utils.cartashelper.RemovedReset.resetdawe;
 
 public class Sobres extends Command {
+    boolean locked = true;
     public Sobres() {
         this.name = "sobres";
         this.help = "Compra sobres o ve tus sobres; Comando en Beta";
@@ -23,6 +24,10 @@ public class Sobres extends Command {
             if(!JDAHandler.executedevonly(commandEvent)) {
                 return;
             }
+        }
+        if(locked) {
+            commandEvent.getChannel().sendMessage("Usa /sobres").queue();
+            return;
         }
         int tokens = 0;
         String[] message = commandEvent.getMessage().getContentRaw().split(" ");

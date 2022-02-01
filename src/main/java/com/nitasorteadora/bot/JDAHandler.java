@@ -149,6 +149,7 @@ public class JDAHandler {
         SlashSet.add(new com.nitasorteadora.bot.slashcommands.Cartas());
         SlashSet.add(new Dbedit());
         SlashSet.add(new Perfil());
+        SlashSet.add(new com.nitasorteadora.bot.slashcommands.Sobres());
         SlashSet.forEach(commandClient::addSlashCommand);
     }
 
