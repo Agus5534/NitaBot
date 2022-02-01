@@ -24,6 +24,7 @@ public class AbrirSobre extends Command {
         this.name = "abrirsobre";
         this.cooldown = 10;
         this.help = "Abre un sobre";
+        this.hidden = true;
     }
 
     @Override

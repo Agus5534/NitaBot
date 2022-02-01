@@ -4,6 +4,9 @@ import com.nitasorteadora.bot.cartas.embeds.CartaC;
 import net.dv8tion.jda.api.entities.Member;
 import org.bukkit.Bukkit;
 
+import java.io.IOException;
+
+import static com.nitasorteadora.bot.Main.cartas;
 import static com.nitasorteadora.bot.Main.cartasconfig;
 
 public class UnlockedChecker {
@@ -87,8 +90,13 @@ public class UnlockedChecker {
         int olddesbloqueadas = 0;
         olddesbloqueadas = (int) cartasconfig.get("Desbloqueadas."+target.getId(),olddesbloqueadas);
         if(olddesbloqueadas != desbloqueadas){
-            Bukkit.getLogger().warning("El usuario " + target.getUser().getAsTag() + " tenia mal guardadas " + olddesbloqueadas + " desbloqueadas. Su cantidad se actualizó a " + desbloqueadas);
+            Bukkit.getLogger().warning("El usuario " + target.getUser().getAsTag() + " tenía mal guardadas " + olddesbloqueadas + " desbloqueadas. Su cantidad se actualizó a " + desbloqueadas);
             cartasconfig.set("Desbloqueadas."+target.getId(),desbloqueadas);
+            try {
+                cartasconfig.save(cartas);
+            } catch (IOException e){
+                e.printStackTrace();
+            }
         }
     }
     private void checker() {

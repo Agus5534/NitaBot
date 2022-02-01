@@ -6,8 +6,12 @@ import com.nitasorteadora.bot.utils.cartashelper.SobresType;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
+import net.dv8tion.jda.api.interactions.commands.OptionType;
+import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Sobres extends SlashCommand {
     public Sobres() {
@@ -65,12 +69,19 @@ public class Sobres extends SlashCommand {
             public Comun() {
                 this.name = "comun";
                 this.help = "Compra un sobre común";
+                List<OptionData> options = new ArrayList<>();
+                options.add(new OptionData(OptionType.INTEGER,"cantidad","Cantidad de sobres que comprarás").setRequired(true));
+                this.options = options;
+
             }
             @Override
             public void execute(SlashCommandEvent event) {
-                if(new SobresManager().canBuy(SobresType.COMUN, event.getMember())) {
-                    new SobresManager().giveSobre(SobresType.COMUN, event.getMember());
+                long cant = event.getOption("cantidad").getAsLong();
+                if(new SobresManager().canBuy(SobresType.COMUN, event.getMember(),cant)) {
+                    new SobresManager().giveSobre(SobresType.COMUN, event.getMember(),cant);
                     event.reply("Has comprado un sobre común correctamente").setEphemeral(true).queue();
+                } else {
+                    event.reply("No tienes suficientes tokens para comprar este sobre").setEphemeral(true).queue();
                 }
             }
         }
@@ -78,12 +89,18 @@ public class Sobres extends SlashCommand {
             public Raro() {
                 this.name = "raro";
                 this.help = "Compra un sobre raro";
+                List<OptionData> options = new ArrayList<>();
+                options.add(new OptionData(OptionType.INTEGER,"cantidad","Cantidad de sobres que comprarás").setRequired(true));
+                this.options = options;
             }
             @Override
             public void execute(SlashCommandEvent event) {
-                if(new SobresManager().canBuy(SobresType.RARO, event.getMember())) {
-                    new SobresManager().giveSobre(SobresType.RARO, event.getMember());
+                long cant = event.getOption("cantidad").getAsLong();
+                if(new SobresManager().canBuy(SobresType.RARO, event.getMember(),cant)) {
+                    new SobresManager().giveSobre(SobresType.RARO, event.getMember(),cant);
                     event.reply("Has comprado un sobre raro correctamente").setEphemeral(true).queue();
+                } else {
+                    event.reply("No tienes suficientes tokens para comprar este sobre").setEphemeral(true).queue();
                 }
             }
         }
@@ -91,12 +108,18 @@ public class Sobres extends SlashCommand {
             public Epico() {
                 this.name = "epico";
                 this.help = "Compra un sobre épico";
+                List<OptionData> options = new ArrayList<>();
+                options.add(new OptionData(OptionType.INTEGER,"cantidad","Cantidad de sobres que comprarás").setRequired(true));
+                this.options = options;
             }
             @Override
             public void execute(SlashCommandEvent event) {
-                if(new SobresManager().canBuy(SobresType.EPICO, event.getMember())) {
-                    new SobresManager().giveSobre(SobresType.EPICO, event.getMember());
+                long cant = event.getOption("cantidad").getAsLong();
+                if(new SobresManager().canBuy(SobresType.EPICO, event.getMember(),cant)) {
+                    new SobresManager().giveSobre(SobresType.EPICO, event.getMember(),cant);
                     event.reply("Has comprado un sobre épico correctamente").setEphemeral(true).queue();
+                } else {
+                    event.reply("No tienes suficientes tokens para comprar este sobre").setEphemeral(true).queue();
                 }
             }
         }

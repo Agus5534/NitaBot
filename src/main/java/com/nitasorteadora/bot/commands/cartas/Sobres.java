@@ -16,6 +16,7 @@ public class Sobres extends Command {
     public Sobres() {
         this.name = "sobres";
         this.help = "Compra sobres o ve tus sobres; Comando en Beta";
+        this.hidden = true;
     }
 
     @Override

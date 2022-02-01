@@ -32,18 +32,29 @@ public class SobresManager {
         tks = (int) cartasconfig.get("Tokens."+member.getId(),tks);
         return tks;
     }
-    public boolean canBuy(SobresType sobreType, Member member) {
-        if(getTokens(member) >= sobreType.getCoste()){
-            return true;
+    public boolean canBuy(SobresType sobreType, Member member, long cantidad) {
+        if(cantidad >= 1 && cantidad <= 50) {
+            if(getTokens(member) >= (sobreType.getCoste() * cantidad)){
+                return true;
+            } else {
+                return false;
+            }
         } else {
             return false;
         }
+
     }
 
-    public void giveSobre(SobresType sobreType, Member member) {
+    public void giveSobre(SobresType sobreType, Member member, long cant) {
         int sobrecount = 0;
         sobrecount = (int) cartasconfig.get(sobreType.getDbName()+member.getId(),sobrecount);
-        sobrecount++;
+        sobrecount = (int) (sobrecount + cant);
+        cartasconfig.set(sobreType.getDbName()+member.getId(),sobrecount);
+    }
+    public void removeSobre(SobresType sobreType, Member member) {
+        int sobrecount = 0;
+        sobrecount = (int) cartasconfig.get(sobreType.getDbName()+member.getId(),sobrecount);
+        sobrecount--;
         cartasconfig.set(sobreType.getDbName()+member.getId(),sobrecount);
     }
     public int getDesbloqueadas(Member member) {
@@ -53,12 +64,18 @@ public class SobresManager {
     }
 
     public void openSobre(SobresType sobreType, SlashCommandEvent event) {
-        if(sobreType == SobresType.COMUN) {
-            sobreComunRNG(event);
-        } else if(sobreType == SobresType.RARO) {
-            sobreRaroRNG(event);
-        } else if(sobreType == SobresType.EPICO) {
-            sobreEpicoRNG(event);
+        if(getCount(sobreType, event.getMember()) >= 1) {
+            if(sobreType == SobresType.COMUN) {
+                sobreComunRNG(event);
+            } else if(sobreType == SobresType.RARO) {
+                sobreRaroRNG(event);
+            } else if(sobreType == SobresType.EPICO) {
+                sobreEpicoRNG(event);
+            }
+            removeSobre(sobreType, event.getMember());
+            event.reply("Abriendo sobre").queue();
+        } else {
+            event.reply("No tienes sobres suficientes").setEphemeral(true).queue();
         }
     }
     public int getCardCount(CartaC carta, Member member) {
@@ -77,8 +94,8 @@ public class SobresManager {
         Collections.shuffle(clist);
         int randomg = (int) (Math.random() * 100 + 1);
         int random = (int) (Math.random() * 30 + 1);
-        if(randomg <= 7) {
-            if(getDesbloqueadas(event.getMember()) <= 36) {
+        if(randomg <= 5) {
+            if(getDesbloqueadas(event.getMember()) <= 35) {
                 if(getCardCount(clist.get(random),event.getMember()) == 0) {
                     buildCarta(clist.get(random),event);
                 }  else {
@@ -106,8 +123,8 @@ public class SobresManager {
         Collections.shuffle(clist);
         int randomg = (int) (Math.random() * 100 + 1);
         int random = (int) (Math.random() * 30 + 1);
-        if(randomg <= 16) {
-            if(getDesbloqueadas(event.getMember()) <= 36) {
+        if(randomg <= 13) {
+            if(getDesbloqueadas(event.getMember()) <= 35) {
                 if(getCardCount(clist.get(random),event.getMember()) == 0) {
                     buildCarta(clist.get(random),event);
                 }  else {
@@ -134,8 +151,8 @@ public class SobresManager {
         Collections.shuffle(clist);
         int randomg = (int) (Math.random() * 100 + 1);
         int random = (int) (Math.random() * 30 + 1);
-        if(randomg <= 29) {
-            if(getDesbloqueadas(event.getMember()) <= 36) {
+        if(randomg <= 23) {
+            if(getDesbloqueadas(event.getMember()) <= 35) {
                 if(getCardCount(clist.get(random),event.getMember()) == 0) {
                     buildCarta(clist.get(random),event);
                 }  else {
@@ -168,15 +185,26 @@ public class SobresManager {
         }
     }
     private void buildCarta(CartaC carta, SlashCommandEvent event){
+        if(getCardCount(carta, event.getMember()) == 0){
+            int desbloqueadas = getDesbloqueadas(event.getMember());
+            desbloqueadas++;
+            cartasconfig.set("Desbloqueadas."+event.getMember().getId(),desbloqueadas);
+        }
         EmbedBuilder eb = new EmbedBuilder();
         eb.setTitle("¡Carta Diaria!");
         eb.setDescription("Obtuviste: **"+carta.getName()+"** " + carta.getEmote());
         eb.setImage(carta.getImage());
         eb.setFooter("Carta "+carta.getCalidad().getName() + "| Season " + carta.getSeason());
         eb.setColor(carta.getCalidad().getColor());
+       String channelid = event.getChannel().getId();
+        event.getJDA().getTextChannelById(channelid).sendMessageEmbeds(eb.build()).queue();
         int cartaCount = getCardCount(carta, event.getMember());
         cartaCount++;
         cartasconfig.set(carta.getDBName()+event.getMember().getId(),cartaCount);
+        int total = 0;
+        total = (int) cartasconfig.get("Total."+event.getMember().getId(),total);
+        total++;
+        cartasconfig.set("Total."+event.getMember().getId(),total);
         try {
             cartasconfig.save(cartas);
         } catch(IOException e){
