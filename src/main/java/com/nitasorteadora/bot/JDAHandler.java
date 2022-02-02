@@ -5,10 +5,8 @@ import com.nitasorteadora.bot.commands.administrativos.Backup;
 import com.nitasorteadora.bot.commands.administrativos.DevOnly;
 import com.nitasorteadora.bot.commands.administrativos.GiveToken;
 import com.nitasorteadora.bot.commands.administrativos.Reload;
-import com.nitasorteadora.bot.commands.cartas.AbrirSobre;
 import com.nitasorteadora.bot.commands.cartas.Cartas;
 import com.nitasorteadora.bot.commands.cartas.Dailycard;
-import com.nitasorteadora.bot.commands.cartas.Sobres;
 import com.nitasorteadora.bot.commands.extra.Cumples;
 import com.nitasorteadora.bot.commands.teams.Addteam;
 import com.nitasorteadora.bot.commands.teams.AnnounceTeams;
@@ -45,7 +43,7 @@ public class JDAHandler {
     }
 
     //IMPORTANTE
-    public boolean devbot = true;
+    public boolean devbot = false;
     //IMPORTANTE
 
     //PUC SI LEES ESTO, NO ME JUZGUES (Si podes hacer criticas constructivas acerca de lo pelotudo que soy uwu)
@@ -71,23 +69,8 @@ public class JDAHandler {
             jdaBuilder.enableIntents(GatewayIntent.GUILD_PRESENCES);
             jdaBuilder.enableCache(CacheFlag.ACTIVITY);
             jdaBuilder.addEventListeners(new GuildMemberJoin());
-           // jdaBuilder.addEventListeners(new SlashCommands());
-            //jdaBuilder.addEventListeners(new ButtonClick());
             jdaBuilder.addEventListeners(new SelectionMenu());
             jda = jdaBuilder.build();
-            /*
-            List<CommandData> cmds = new ArrayList<CommandData>();
-            List<CommandData> testcmds = new ArrayList<CommandData>();
-           cmds.add(new CommandData("bola8", "Predice algo").addOption(OptionType.STRING, "pregunta", "Una pregunta que tendré que responder", true));
-            cmds.add(new CommandData("backup","Haz un backup"));
-            cmds.add(new CommandData("perfil","Mira el perfil tuyo o de alguien").addOption(OptionType.USER,"usuario","El usuario de quien quieres ver el perfil (opcional)",false));
-            cmds.add(new CommandData("cartas","Mira las cartas tuyas o de alguien").addOption(OptionType.USER,"usuario","El usuario de quien quieres ver las cartas (opcional)", false));
-            cmds.add(new CommandData("dbedit","Edita la base de datos").addOption(OptionType.STRING,"path","Database Path",true).addOption(OptionType.INTEGER, "value","To set value (Integer)", true));
-            if(!devbot) {
-                //jda.getGuildById("754918107587543043").updateCommands().addCommands(testcmds).queue();
-                jda.updateCommands().addCommands(cmds).queue();
-            }
-*/
 
 
         } catch (IllegalArgumentException | LoginException e) {
@@ -136,10 +119,7 @@ public class JDAHandler {
        commandSet.add(new Cumples(plugin));
        commandSet.add(new Cartas());
        commandSet.add(new Backup());
-       commandSet.add(new Sobres());
-       commandSet.add(new AbrirSobre());
        commandSet.add(new GiveToken());
-      // commandSet.add(new DevTest());
         commandSet.add(new DevOnly());
         commandSet.add(new LinkAccount());
         //commandSet.add(new UnlockedChecker());
