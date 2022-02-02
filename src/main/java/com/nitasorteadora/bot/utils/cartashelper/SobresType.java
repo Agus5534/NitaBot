@@ -2,8 +2,8 @@ package com.nitasorteadora.bot.utils.cartashelper;
 
 public enum SobresType {
     COMUN("SobreComun.",13),
-    RARO("SobreRaro.",16),
-    EPICO("SobreEpico.",20);
+    RARO("SobreRaro.",17),
+    EPICO("SobreEpico.",21);
 
     private String dbName;
     private int coste;
