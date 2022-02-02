@@ -1,5 +1,7 @@
 package com.nitasorteadora.bot.minecraft.events;
 
+import com.nitasorteadora.bot.utils.PrizeManager;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
@@ -7,14 +9,10 @@ import org.bukkit.event.entity.PlayerDeathEvent;
 public class DeathEvent implements Listener {
 @EventHandler
     public void onDeath(PlayerDeathEvent event) {
-   /* DiscordWebhook webhook = new DiscordWebhook(webhookURL);
-    webhook.addEmbed(new DiscordWebhook.EmbedObject().setDescription(event.getDeathMessage()).setColor(Color.RED));
-    try {
-        webhook.execute();
-    } catch (java.io.IOException e) {
-        Bukkit.getLogger().severe(e.getStackTrace().toString());
-    }*/
-
+   if(event.getEntity().getKiller() instanceof Player) {
+       Player player = event.getEntity().getKiller();
+        new PrizeManager().giveTokens(player, 3);
+   }
 }
 
 }
