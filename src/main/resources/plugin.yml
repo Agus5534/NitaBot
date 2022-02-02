@@ -1,6 +1,6 @@
 main: com.nitasorteadora.bot.Main
 name: NitaSorteadora
-version: 2.0.3
+version: 2.1.0
 description: Bot del weekend!
 api-version: 1.16
 author: Agus5534
