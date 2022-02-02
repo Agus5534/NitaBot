@@ -4,7 +4,6 @@ import com.jagrosh.jdautilities.command.Command;
 import com.jagrosh.jdautilities.command.CommandEvent;
 import com.nitasorteadora.bot.JDAHandler;
 import com.nitasorteadora.bot.cartas.config.Season1;
-import com.nitasorteadora.bot.cartas.config.Season2;
 import com.nitasorteadora.bot.cartas.config.Season3;
 import com.nitasorteadora.bot.utils.UnlockedChecker;
 import net.dv8tion.jda.api.EmbedBuilder;
@@ -36,16 +35,12 @@ public class Dailycard extends Command {
                setCooldown(commandEvent.getAuthor().getIdLong());
                checkLuck(commandEvent);
                resetdawe(commandEvent);
-               int random = (int) (Math.random() * 100 + 1);
+               int random = (int) (Math.random() * 75 + 1);
                if(random <= 37) {
                    Season1.CartasS1(commandEvent);
                } else {
                    if(random <= 74) {
-                       Season2.CartasS2(commandEvent);
-                   } else {
-                       if(random <= 100) {
-                           Season3.CartasS3(commandEvent);
-                       }
+                       Season3.CartasS3(commandEvent);
                    }
                }
            } else {

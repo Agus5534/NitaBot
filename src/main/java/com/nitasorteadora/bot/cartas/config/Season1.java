@@ -40,7 +40,7 @@ public class Season1 {
                     if(random < 100) {
                         LegendariasS1.LegS1(commandEvent);
                     } else {
-                        Season2.CartasS2(commandEvent);
+                        Season3.CartasS3(commandEvent);
                     }
                 }
             }
@@ -60,7 +60,7 @@ public class Season1 {
                     if(random < 100) {
                         LegendariasS1.LegS1(commandEvent);
                     } else {
-                        Season2.CartasS2(commandEvent);
+                        Season3.CartasS3(commandEvent);
                     }
                 }
             }
@@ -80,7 +80,7 @@ public class Season1 {
                     if(random < 100) {
                         LegendariasS1.LegS1(commandEvent);
                     } else {
-                        Season2.CartasS2(commandEvent);
+                        Season3.CartasS3(commandEvent);
                     }
                 }
             }
@@ -100,7 +100,7 @@ public class Season1 {
                     if(random < 100) {
                         LegendariasS1.LegS1(commandEvent);
                     } else {
-                        Season2.CartasS2(commandEvent);
+                        Season3.CartasS3(commandEvent);
                     }
                 }
             }
@@ -120,7 +120,7 @@ public class Season1 {
                     if(random < 100) {
                         LegendariasS1.LegS1(commandEvent);
                     } else {
-                        Season2.CartasS2(commandEvent);
+                        Season3.CartasS3(commandEvent);
                     }
                 }
             }
@@ -140,7 +140,7 @@ public class Season1 {
                     if(random < 100) {
                         LegendariasS1.LegS1(commandEvent);
                     } else {
-                        Season2.CartasS2(commandEvent);
+                        Season3.CartasS3(commandEvent);
                     }
                 }
             }
