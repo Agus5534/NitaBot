@@ -124,7 +124,7 @@ public class CartasHelper {
         return this;
     }
     public CartasHelper esMitica() {
-        imagencalidad = "https://nullxd";
+        imagencalidad = "https://cdn.discordapp.com/attachments/818995908779835393/939229794455924816/miticathumbnail.png";
         calidad = 'm';
         color = Color.BLACK;
         footer = "Carta Mitica | Season " + season;
