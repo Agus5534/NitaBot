@@ -81,7 +81,7 @@ public class Profile extends Command {
         embedBuilder.setThumbnail("https://cdn.discordapp.com/attachments/820116089731153950/939336283975745586/unknown.png");
         embedBuilder.setFooter(":warning: Nos hemos topado con un problema al ejecutar el comando");
         embedBuilder.setColor(Color.RED);
-        commandEvent.getChannel().sendMessageEmbeds(embedBuilder.build());
+        commandEvent.getChannel().sendMessageEmbeds(embedBuilder.build()).queue();
 
     }
 
