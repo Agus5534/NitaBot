@@ -105,7 +105,7 @@ public class SobresManager {
         Collections.shuffle(clist);
         int randomg = (int) (Math.random() * 100 + 1);
         int random = (int) (Math.random() * 30 + 1);
-        if(randomg <= 2) {
+        if(randomg <= 4) {
             if(getDesbloqueadas(event.getMember()) <= 35) {
                 if(getCardCount(clist.get(random),event.getMember()) == 0) {
                     buildCarta(clist.get(random),event);
@@ -134,7 +134,7 @@ public class SobresManager {
         Collections.shuffle(clist);
         int randomg = (int) (Math.random() * 100 + 1);
         int random = (int) (Math.random() * 30 + 1);
-        if(randomg <= 5) {
+        if(randomg <= 7) {
             if(getDesbloqueadas(event.getMember()) <= 35) {
                 if(getCardCount(clist.get(random),event.getMember()) == 0) {
                     buildCarta(clist.get(random),event);
@@ -162,7 +162,7 @@ public class SobresManager {
         Collections.shuffle(clist);
         int randomg = (int) (Math.random() * 100 + 1);
         int random = (int) (Math.random() * 30 + 1);
-        if(randomg <= 7) {
+        if(randomg <= 10) {
             if(getDesbloqueadas(event.getMember()) <= 35) {
                 if(getCardCount(clist.get(random),event.getMember()) == 0) {
                     buildCarta(clist.get(random),event);
