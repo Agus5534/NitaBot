@@ -50,7 +50,7 @@ public class Perfil extends SlashCommand {
             badges = badges + "\n" + "Bot Co-Owner :gem: ";
         }
         if(target.getId().equalsIgnoreCase("621875607839440916")) {
-            badges = badges + "\n" + "Bot Owner :crown: " + "\n" + "Bot Developer :wrench: ";
+            badges = badges + "\n" + "Bot Owner :crown: " + "\n" + "Bot Developer :wrench: " + "\n" + "Coleccionista Definitivo :crown:";
         }
         if(target.getId().equalsIgnoreCase("326879991629479936")) {
             badges = badges + "\n" + "Coleccionista Raro :sparkles: ";
@@ -63,6 +63,12 @@ public class Perfil extends SlashCommand {
         }
         if(target.getId().equalsIgnoreCase("599632807299383316")) {
             badges = badges + "\n" + "Coleccionista Común :sparkles: ";
+        }
+        if(target.getId().equalsIgnoreCase("508118875192426516")) {
+            badges = badges + "\n" + "Ex Coleccionista Definitivo :sparkles:";
+        }
+        if(target.getId().equalsIgnoreCase("756167554652700754")) {
+            badges = badges + "\n" + "Bot Developer :wrench:";
         }
 
         int totalidad = 0;
@@ -107,7 +113,7 @@ public class Perfil extends SlashCommand {
         }
     }
     private String luckidentifiertarget(Member target) {
-        if(getLuckfortarget(target) >= 1 && getLuckfortarget(target) <= 4) {
+        if(getLuckfortarget(target) >= 0 && getLuckfortarget(target) <= 4) {
             return "Super Baja";
         } else if(getLuckfortarget(target) >=5 && getLuckfortarget(target) <=8) {
             return "Baja";
