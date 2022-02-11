@@ -9,7 +9,7 @@ import com.nitasorteadora.bot.utils.exceptions.CreateCardException;
 public class Agus5534 implements EmbedHelper {
     public static void Agus(CommandEvent commandEvent) {
         CartaC carta = CartaC.AGUS;
-        CartasHelper embed = new CartasHelper(commandEvent);
+        CartasHelper embed = new CartasHelper(commandEvent,carta);
         embed.cardName(carta.getName())
                 .author(carta.getAuthor())
                 .emote(carta.getEmote())

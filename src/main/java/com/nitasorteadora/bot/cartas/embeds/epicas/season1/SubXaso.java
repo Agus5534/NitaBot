@@ -9,7 +9,7 @@ import com.nitasorteadora.bot.utils.exceptions.CreateCardException;
 public class SubXaso implements EmbedHelper {
     public static void Sub(CommandEvent commandEvent) {
         CartaC carta = CartaC.SUBXASO;
-        CartasHelper embed = new CartasHelper(commandEvent);
+        CartasHelper embed = new CartasHelper(commandEvent,carta);
         embed.cardName(carta.getName())
                 .author(carta.getAuthor())
                 .emote(carta.getEmote())

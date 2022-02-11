@@ -2,21 +2,42 @@ package com.nitasorteadora.bot.cartas.embeds.comunes.season1;
 
 import com.jagrosh.jdautilities.command.CommandEvent;
 import com.nitasorteadora.bot.cartas.config.EmbedHelper;
+import com.nitasorteadora.bot.cartas.embeds.CartaC;
 import com.nitasorteadora.bot.utils.cartashelper.CartasHelper;
 import com.nitasorteadora.bot.utils.exceptions.CreateCardException;
 
 public class Magic implements EmbedHelper {
     public static void Magia(CommandEvent commandEvent) {
-        CartasHelper carta = new CartasHelper(commandEvent);
-        carta.cardName("El Modder")
-                .author("Magic")
-                .emote("<:Magic:788433576848261130>")
-                .image("https://cdn.discordapp.com/attachments/818613273813319781/871973224005640212/1elmodder.jpg")
-                .dbName("CartaMagic.")
-                .season(1)
-                .esComun();
+        CartaC carta = CartaC.MAGIC;
+        CartasHelper embed = new CartasHelper(commandEvent,carta);
+        embed.cardName(carta.getName())
+                .author(carta.getAuthor())
+                .emote(carta.getEmote())
+                .image(carta.getImage())
+                .dbName(carta.getDBName())
+                .season(carta.getSeason());
+        switch (carta.getCalidad()){
+            case COMUN:
+                embed.esComun();
+                break;
+            case RARA:
+                embed.esRara();
+                break;
+            case EPICA:
+                embed.esEpica();
+                break;
+            case LEGENDARIA:
+                embed.esLegendaria();
+                break;
+            case MITICA:
+                embed.esMitica();
+                break;
+            case SECRETA:
+                embed.esSecreta();
+                break;
+        }
         try {
-            carta.build(commandEvent);
+            embed.build(commandEvent);
         } catch (CreateCardException e) {
             e.printStackTrace();
         }

@@ -9,7 +9,7 @@ import com.nitasorteadora.bot.utils.exceptions.CreateCardException;
 public class Iki implements EmbedHelper {
     public static void Ik(CommandEvent commandEvent) {
         CartaC carta = CartaC.IKI;
-        CartasHelper embed = new CartasHelper(commandEvent);
+        CartasHelper embed = new CartasHelper(commandEvent,carta);
         embed.cardName(carta.getName())
                 .author(carta.getAuthor())
                 .emote(carta.getEmote())

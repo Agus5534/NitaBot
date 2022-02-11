@@ -2,21 +2,42 @@ package com.nitasorteadora.bot.cartas.embeds.comunes.season1;
 
 import com.jagrosh.jdautilities.command.CommandEvent;
 import com.nitasorteadora.bot.cartas.config.EmbedHelper;
+import com.nitasorteadora.bot.cartas.embeds.CartaC;
 import com.nitasorteadora.bot.utils.cartashelper.CartasHelper;
 import com.nitasorteadora.bot.utils.exceptions.CreateCardException;
 
 public class Zijhyan implements EmbedHelper {
     public static void Zij(CommandEvent commandEvent) {
-        CartasHelper carta = new CartasHelper(commandEvent);
-        carta.cardName("El Mago Ingeniero")
-                .author("Zijhyan")
-                .emote("<:Zijhyan:788421732125507595>")
-                .image("https://cdn.discordapp.com/attachments/818613273813319781/872201410341658674/1elingeniero.jpg")
-                .dbName("CartaZij.")
-                .season(1)
-                .esComun();
+        CartaC carta = CartaC.ZIJHYAN;
+        CartasHelper embed = new CartasHelper(commandEvent,carta);
+        embed.cardName(carta.getName())
+                .author(carta.getAuthor())
+                .emote(carta.getEmote())
+                .image(carta.getImage())
+                .dbName(carta.getDBName())
+                .season(carta.getSeason());
+        switch (carta.getCalidad()){
+            case COMUN:
+                embed.esComun();
+                break;
+            case RARA:
+                embed.esRara();
+                break;
+            case EPICA:
+                embed.esEpica();
+                break;
+            case LEGENDARIA:
+                embed.esLegendaria();
+                break;
+            case MITICA:
+                embed.esMitica();
+                break;
+            case SECRETA:
+                embed.esSecreta();
+                break;
+        }
         try {
-            carta.build(commandEvent);
+            embed.build(commandEvent);
         } catch (CreateCardException e) {
             e.printStackTrace();
         }

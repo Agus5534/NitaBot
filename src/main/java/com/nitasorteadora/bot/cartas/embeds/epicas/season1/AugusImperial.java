@@ -9,33 +9,33 @@ import com.nitasorteadora.bot.utils.exceptions.CreateCardException;
 public class AugusImperial implements EmbedHelper {
     public static void Augus(CommandEvent commandEvent) {
         CartaC carta = CartaC.AUGUSIMPERIAL;
-        CartasHelper embed = new CartasHelper(commandEvent);
+        CartasHelper embed = new CartasHelper(commandEvent,carta);
         embed.cardName(carta.getName())
                 .author(carta.getAuthor())
                 .emote(carta.getEmote())
                 .image(carta.getImage())
                 .dbName(carta.getDBName())
                 .season(carta.getSeason());
-                switch (carta.getCalidad()){
-                    case COMUN:
-                        embed.esComun();
-                        break;
-                    case RARA:
-                        embed.esRara();
-                        break;
-                    case EPICA:
-                        embed.esEpica();
-                        break;
-                    case LEGENDARIA:
-                        embed.esLegendaria();
-                        break;
-                    case MITICA:
-                        embed.esMitica();
-                        break;
-                    case SECRETA:
-                        embed.esSecreta();
-                        break;
-                }
+        switch (carta.getCalidad()){
+            case COMUN:
+                embed.esComun();
+                break;
+            case RARA:
+                embed.esRara();
+                break;
+            case EPICA:
+                embed.esEpica();
+                break;
+            case LEGENDARIA:
+                embed.esLegendaria();
+                break;
+            case MITICA:
+                embed.esMitica();
+                break;
+            case SECRETA:
+                embed.esSecreta();
+                break;
+        }
         try {
             embed.build(commandEvent);
         } catch (CreateCardException e) {

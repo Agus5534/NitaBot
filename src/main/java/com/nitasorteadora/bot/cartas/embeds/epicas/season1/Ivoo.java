@@ -9,7 +9,7 @@ import com.nitasorteadora.bot.utils.exceptions.CreateCardException;
 public class Ivoo implements EmbedHelper {
 public static void Ivo(CommandEvent commandEvent) {
     CartaC carta = CartaC.IVOO;
-    CartasHelper embed = new CartasHelper(commandEvent);
+    CartasHelper embed = new CartasHelper(commandEvent,carta);
     embed.cardName(carta.getName())
             .author(carta.getAuthor())
             .emote(carta.getEmote())

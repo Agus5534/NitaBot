@@ -2,21 +2,42 @@ package com.nitasorteadora.bot.cartas.embeds.raras.season3;
 
 import com.jagrosh.jdautilities.command.CommandEvent;
 import com.nitasorteadora.bot.cartas.config.EmbedHelper;
+import com.nitasorteadora.bot.cartas.embeds.CartaC;
 import com.nitasorteadora.bot.utils.cartashelper.CartasHelper;
 import com.nitasorteadora.bot.utils.exceptions.CreateCardException;
 
 public class Yuri implements EmbedHelper {
     public static void Yur(CommandEvent commandEvent){
-        CartasHelper carta = new CartasHelper(commandEvent);
-        carta.cardName("El Varelense")
-                .author("Yuri")
-                .emote("<:Yuri:864214891538677780>")
-                .image("https://cdn.discordapp.com/attachments/818613273813319781/879874807427104768/elvarelense.jpg")
-                .dbName("CartaYuri.")
-                .season(3)
-                .esRara();
+        CartaC carta = CartaC.YURI;
+        CartasHelper embed = new CartasHelper(commandEvent,carta);
+        embed.cardName(carta.getName())
+                .author(carta.getAuthor())
+                .emote(carta.getEmote())
+                .image(carta.getImage())
+                .dbName(carta.getDBName())
+                .season(carta.getSeason());
+        switch (carta.getCalidad()){
+            case COMUN:
+                embed.esComun();
+                break;
+            case RARA:
+                embed.esRara();
+                break;
+            case EPICA:
+                embed.esEpica();
+                break;
+            case LEGENDARIA:
+                embed.esLegendaria();
+                break;
+            case MITICA:
+                embed.esMitica();
+                break;
+            case SECRETA:
+                embed.esSecreta();
+                break;
+        }
         try {
-            carta.build(commandEvent);
+            embed.build(commandEvent);
         } catch (CreateCardException e) {
             e.printStackTrace();
         }

@@ -8,7 +8,7 @@ import com.nitasorteadora.bot.utils.exceptions.CreateCardException;
 public class NitaBot {
     public static void NitaBot(CommandEvent commandEvent) {
         CartaC carta = CartaC.NitaBot;
-        CartasHelper embed = new CartasHelper(commandEvent);
+        CartasHelper embed = new CartasHelper(commandEvent,carta);
         embed.cardName(carta.getName())
                 .author(carta.getAuthor())
                 .emote(carta.getEmote())
