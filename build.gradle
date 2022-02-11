@@ -12,7 +12,6 @@ sourceSets {
         output.dir(generatedVersionDir, builtBy: 'generateVersionProperties')
     }
 }
-
 repositories {
     mavenCentral()
     maven {
