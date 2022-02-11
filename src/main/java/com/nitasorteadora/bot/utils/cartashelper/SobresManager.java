@@ -106,7 +106,7 @@ public class SobresManager {
         int randomg = (int) (Math.random() * 100 + 1);
         int random = (int) (Math.random() * 30 + 1);
         if(randomg <= 4) {
-            if(getDesbloqueadas(event.getMember()) <= 35) {
+            if(getDesbloqueadas(event.getMember()) <= 41) {
                 if(getCardCount(clist.get(random),event.getMember()) == 0) {
                     buildCarta(clist.get(random),event);
                 }  else {
@@ -135,7 +135,7 @@ public class SobresManager {
         int randomg = (int) (Math.random() * 100 + 1);
         int random = (int) (Math.random() * 30 + 1);
         if(randomg <= 7) {
-            if(getDesbloqueadas(event.getMember()) <= 35) {
+            if(getDesbloqueadas(event.getMember()) <= 41) {
                 if(getCardCount(clist.get(random),event.getMember()) == 0) {
                     buildCarta(clist.get(random),event);
                 }  else {
@@ -163,7 +163,7 @@ public class SobresManager {
         int randomg = (int) (Math.random() * 100 + 1);
         int random = (int) (Math.random() * 30 + 1);
         if(randomg <= 10) {
-            if(getDesbloqueadas(event.getMember()) <= 35) {
+            if(getDesbloqueadas(event.getMember()) <= 41) {
                 if(getCardCount(clist.get(random),event.getMember()) == 0) {
                     buildCarta(clist.get(random),event);
                 }  else {
