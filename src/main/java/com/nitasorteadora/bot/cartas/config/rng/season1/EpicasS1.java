@@ -1,12 +1,14 @@
 package com.nitasorteadora.bot.cartas.config.rng.season1;
 import com.jagrosh.jdautilities.command.CommandEvent;
+import com.nitasorteadora.bot.cartas.embeds.epicas.Apocalix;
+import com.nitasorteadora.bot.cartas.embeds.epicas.Mage;
 import com.nitasorteadora.bot.cartas.embeds.epicas.season1.*;
 import com.nitasorteadora.bot.cartas.embeds.epicas.season2.ConnG;
 import com.nitasorteadora.bot.cartas.embeds.epicas.season2.Rufk;
 
 public class EpicasS1 {
     public static void EpicS1(CommandEvent commandEvent) {
-        int random = (int) (Math.random() * 64 + 1);
+        int random = (int) (Math.random() * 77 + 1);
         if(random < 7){
             Nita.Nt(commandEvent);
         } else {
@@ -33,6 +35,10 @@ public class EpicasS1 {
                                 } else {
                                         if(random < 63) {
                                             Rufk.ruf(commandEvent);
+                                        } else  if(random < 70) {
+                                            Apocalix.Apocalix(commandEvent);
+                                        } else if(random < 77) {
+                                            Mage.Mage(commandEvent);
                                         } else {
                                             LegendariasS1.LegS1(commandEvent);
                                         }

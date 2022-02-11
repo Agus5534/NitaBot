@@ -84,6 +84,11 @@ public class Cartas extends SlashCommand {
         int nitabot = 0;
         int cfabo = 0;
         int ccarmened = 0;
+        int cjanethy = 0;
+        int chermes = 0;
+        int czapata = 0;
+        int capocalix = 0;
+        int cmage = 0;
         cevil = (int) cartasconfig.get("CartaEvil." + target.getId(), cevil);
         cmagic = (int) cartasconfig.get("CartaMagic." + target.getId(), cmagic);
         cmaurito = (int) cartasconfig.get("CartaMaurito." + target.getId(), cmaurito);
@@ -121,6 +126,11 @@ public class Cartas extends SlashCommand {
         nitabot = (int) cartasconfig.get(CartaC.NitaBot.getDBName()+target.getId(),nitabot);
         cfabo = (int) cartasconfig.get("CartaFabo."+target.getId(),cfabo);
         ccarmened = (int) cartasconfig.get("CartaCarmened."+target.getId(),ccarmened);
+        cjanethy = (int) cartasconfig.get(CartaC.JANETHY.getDBName()+target.getId(),cjanethy);
+        chermes = (int) cartasconfig.get(CartaC.HERMES.getDBName()+target.getId(),chermes);
+        czapata = (int) cartasconfig.get(CartaC.ZAPATA.getDBName()+target.getId(),czapata);
+        capocalix = (int) cartasconfig.get(CartaC.APOCALIX.getDBName()+target.getId(),capocalix);
+        cmage = (int) cartasconfig.get(CartaC.MAGE.getDBName()+target.getId(),cmage);
         String magic = "El Modder: " + cmagic;
         String maurito = "El Mayor: " + cmaurito;
         String zijhyan = "El Mago Ingeniero: " + czij;
@@ -133,7 +143,8 @@ public class Cartas extends SlashCommand {
         String goge = "El Referencias: " + cgoge;
         String lexan = "El Distraído: " + clexan;
         String ayden = "El Entusiasta: " + cayden;
-        String comunes = magic + "\n " + maurito + "\n " + zijhyan + "\n " + evil + "\n " + tatu + "\n " + charly + "\n " + spiker + "\n " + starr + "\n " + flowii + "\n "  + goge + "\n " + lexan + "\n " + ayden;
+        String janethy = CartaC.JANETHY.getName() +": " + cjanethy;
+        String comunes = magic + "\n " + maurito + "\n " + zijhyan + "\n " + evil + "\n " + tatu + "\n " + charly + "\n " + spiker + "\n " + starr + "\n " + flowii + "\n "  + goge + "\n " + lexan + "\n " + ayden + "\n" + janethy;
 
         String cuchi = "La Pequeña: " + ccuchi;
         String uimpi = "La Animadora: " + cuimpi;
@@ -146,8 +157,10 @@ public class Cartas extends SlashCommand {
         String mario = "El Pokemaníaco: " + cmario;
         String fabo = "El Asustadizo: " + cfabo;
         String carmened = "El Espontáneo: "+ ccarmened;
+        String hermes = CartaC.HERMES.getName() +": " + chermes;
+        String zapata = CartaC.ZAPATA.getName() +": " + czapata;
 
-        String raras = cuchi + "\n " + uimpi  + "\n "  + salvi + "\n " + pato +  "\n " + heis + "\n " + infer + "\n " + azga + "\n " + yuri + "\n " + mario + "\n " + fabo + "\n " + carmened;
+        String raras = cuchi + "\n " + uimpi  + "\n "  + salvi + "\n " + pato +  "\n " + heis + "\n " + infer + "\n " + azga + "\n " + yuri + "\n " + mario + "\n " + fabo + "\n " + carmened + "\n" + hermes + "\n" + zapata;
 
 
         String nita = "La Artista: " + cnita;
@@ -159,8 +172,11 @@ public class Cartas extends SlashCommand {
         String iki = "El Guardián: " + ciki;
         String conn = "La Editora: " + cconn;
         String rufk = "El Inquieto: " + crufk;
+        String mage = CartaC.MAGE.getName() +": " + cmage;
+        String apocalix = CartaC.APOCALIX.getName() +": " + capocalix;
 
-        String epicas = nita + "\n " + panda + "\n " + sub + "\n " + augus + "\n " + luqui + "\n " + ivo + "\n " + iki + "\n " + conn + "\n " + rufk;
+
+        String epicas = nita + "\n " + panda + "\n " + sub + "\n " + augus + "\n " + luqui + "\n " + ivo + "\n " + iki + "\n " + conn + "\n " + rufk + "\n" + mage + "\n" + apocalix;
 
         String lucmus = "El Admin: " + clucmus;
         String nyrem = "El Callado: " + cnyrem;

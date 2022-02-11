@@ -1,5 +1,5 @@
 package com.nitasorteadora.bot.utils.cartashelper;
 
 public interface CartasData {
-String totaldesbloqueadas = "/37";
+String totaldesbloqueadas = "/42";
 }

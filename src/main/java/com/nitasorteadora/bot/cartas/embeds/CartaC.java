@@ -16,7 +16,7 @@ public enum CartaC {
     SRLEXAN("El Distraido","Lexan","<:Lexan:892154822277619722>","https://cdn.discordapp.com/attachments/818613273813319781/892875761189519411/1eldistraido.jpg","CartaLexan.",3,CalidadC.COMUN,"892154822277619722"),
     STARRFALLZ("La Indecisa","Starr","<:Starrzfall:864216141685456956>","https://cdn.discordapp.com/attachments/818613273813319781/884575359788535869/1laindecisa.jpg","CartaStarr.",3,CalidadC.COMUN,"864216141685456956"),
     TATURC("El Boludo","Tatu","<:Tatu:864214891249139772>","https://cdn.discordapp.com/attachments/818613273813319781/879509809580367902/1elboludo.jpg","CartaTatu.",3,CalidadC.COMUN,"864214891249139772"),
-
+    JANETHY("La Tierna","Janethy","<:Janethy:940699211576537148>","https://cdn.discordapp.com/attachments/818995908779835393/941523918278258748/1latierna.jpg","CartaJanethy.",0,CalidadC.COMUN,"940699211576537148"),
     //Raras
     CUCHI("La Pequeña","Cuchi","<:Cuchi:864245161993961473>","https://cdn.discordapp.com/attachments/818613273813319781/871923636737564693/1lapequena.jpg","CartaCuchi.",1,CalidadC.RARA,"864245161993961473"),
     UIMPI("La Animadora","Uimpi","<:Uimpi:799828322287747092>","https://cdn.discordapp.com/attachments/818613273813319781/872201333636222976/1laanimadora.jpg","CartaUimpi.",1,CalidadC.RARA,"799828322287747092"),
@@ -29,7 +29,8 @@ public enum CartaC {
     YURI("El Valerense","Yuri","<:Yuri:864214891538677780>","https://cdn.discordapp.com/attachments/818613273813319781/879874807427104768/elvarelense.jpg","CartaYuri.",3,CalidadC.RARA,"864214891538677780"),
     CARMENED("El Espontáneo","Carmened","<:Carmened:935644590441107556>","https://cdn.discordapp.com/attachments/818995908779835393/936805180731699230/1elespontaneo.jpg","CartaCarmened.",0,CalidadC.RARA,"935644590441107556"),
     FABO("El Asustadizo","Fabo","<:Fabo:935644590680199179>","https://cdn.discordapp.com/attachments/818995908779835393/936805180408733706/1elasustadizo.jpg","CartaFabo.",0,CalidadC.RARA,"935644590680199179"),
-
+    HERMES("El Pistolero","Hermes","<:Hermes:940737531916451881>","https://cdn.discordapp.com/attachments/818995908779835393/941523919322628126/1elpistolero.jpg","CartaHermes.",0,CalidadC.RARA,"940737531916451881"),
+    ZAPATA("El Trickster","Zapata","<:Zapata:940699523599204392>","https://cdn.discordapp.com/attachments/818995908779835393/941523918836076614/1eltrickster.jpg","CartaZapata.",0,CalidadC.RARA,"940699523599204392"),
     //Epicas
     AUGUSIMPERIAL("El Imperial","AugusImperial","<:Augus:804429263431532605>","https://cdn.discordapp.com/attachments/818613273813319781/871972935185879070/1elimperial.jpg","CartaAugus.",1,CalidadC.EPICA,"804429263431532605"),
     IKI("El Guardián","Iki","<:Iki:830295031319101471>","https://cdn.discordapp.com/attachments/818613273813319781/872201470202753065/1elguardian.jpg","CartaIki.",1,CalidadC.EPICA,"830295031319101471"),
@@ -40,6 +41,8 @@ public enum CartaC {
     THEBOYPANDA("El Paciente","TheBoyPanda","<:Panda:871861308251856936>","https://cdn.discordapp.com/attachments/818613273813319781/871923579388821564/1elpaciente.jpg","CartaPanda.",1,CalidadC.EPICA,"871861308251856936"),
     CONNG("La Editora","ConnG","<:Conn:852972434188795915>","https://cdn.discordapp.com/attachments/818613273813319781/873351022221856768/1laeditora.jpg","CartaConn.",2,CalidadC.EPICA,"852972434188795915"),
     RUFK("El Inquieto","Rufk","<:Rufk:819332353939210241>","https://cdn.discordapp.com/attachments/818613273813319781/873422021311221800/1elinquieto.jpg","CartaRufk.",2,CalidadC.EPICA,"819332353939210241"),
+    APOCALIX("El Cortés","Apocalix","<:Apocalix:940737531828371506>","https://cdn.discordapp.com/attachments/818995908779835393/941523919804981318/1elcortes.jpg","CartaApocalix.",0,CalidadC.EPICA,"940737531828371506"),
+    MAGE("El Payaso","Mage","<:UNKMage:940699211731718144>","https://cdn.discordapp.com/attachments/818995908779835393/941523917816877077/1elpayaso.jpg","CartaMage.",0,CalidadC.EPICA,"940699211731718144"),
 
     //Legendarias
     LUCMUS("El Admin","Lucmus","<:Lucmus:867887798476472331>","https://cdn.discordapp.com/attachments/818613273813319781/871923482953392128/1eladmin.jpg","CartaLucmus.",1,CalidadC.LEGENDARIA,"867887798476472331"),
