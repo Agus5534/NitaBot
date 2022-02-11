@@ -2,6 +2,7 @@ package com.nitasorteadora.bot.utils.cartashelper;
 
 import com.jagrosh.jdautilities.command.CommandEvent;
 import com.nitasorteadora.bot.Main;
+import com.nitasorteadora.bot.cartas.embeds.CartaC;
 import com.nitasorteadora.bot.utils.exceptions.CreateCardException;
 import net.dv8tion.jda.api.EmbedBuilder;
 import okhttp3.internal.http2.ErrorCode;
@@ -27,9 +28,17 @@ public class CartasHelper {
     int cantcartas = 0;
     int total = 0;
     int desbloqueadas = 0;
+    CartaC carta;
+    @Deprecated()
     public CartasHelper(CommandEvent commandEvent) {
         super();
     }
+
+    public CartasHelper(CommandEvent commandEvent, CartaC carta) {
+        super();
+        this.carta = carta;
+    }
+
 
     public CartasHelper cardName(String _nombrecarta) {
         if(!_nombrecarta.isEmpty()) {
@@ -88,17 +97,21 @@ public class CartasHelper {
         imagencalidad = "https://cdn.discordapp.com/attachments/818995908779835393/835349936568401939/comun.png";
         calidad = 'c';
         color = Color.GRAY;
-        footer = "Carta Común | Season " + season;
+        if(carta.getSeason() == 0) {
+            footer = "Carta Común | Out of season";
+        } else {
+            footer = "Carta Común | Season " + carta.getSeason();
+        }
         return this;
     }
     public CartasHelper esRara() {
         imagencalidad = "https://cdn.discordapp.com/attachments/818995908779835393/835349958122143825/raro.png";
         calidad = 'r';
         color = Color.BLUE;
-        if(season == 0) {
+        if(carta.getSeason() == 0) {
             footer = "Carta Rara | Out of season";
         } else {
-            footer = "Carta Rara | Season " + season;
+            footer = "Carta Rara | Season " + carta.getSeason();
         }
         return this;
     }
@@ -106,14 +119,22 @@ public class CartasHelper {
         imagencalidad = "https://cdn.discordapp.com/attachments/818995908779835393/835349972265205769/epico.png";
         calidad = 'e';
         color = Color.MAGENTA;
-        footer = "Carta Épica | Season " + season;
+        if(carta.getSeason() == 0) {
+            footer = "Carta Épica | Out of season";
+        } else {
+            footer = "Carta Épica | Season " + carta.getSeason();
+        }
         return this;
     }
     public CartasHelper esLegendaria() {
         imagencalidad = "https://cdn.discordapp.com/attachments/818995908779835393/835349989952978994/legendario.png";
         calidad = 'l';
         color = Color.ORANGE;
-        footer = "Carta Legendaria | Season " + season;
+        if(carta.getSeason() == 0) {
+            footer = "Carta Legendaria | Out of season";
+        } else {
+            footer = "Carta Legendaria | Season " + carta.getSeason();
+        }
         return this;
     }
     public CartasHelper esSecreta() {
@@ -127,14 +148,18 @@ public class CartasHelper {
         imagencalidad = "https://cdn.discordapp.com/attachments/818995908779835393/939229794455924816/miticathumbnail.png";
         calidad = 'm';
         color = Color.BLACK;
-        footer = "Carta Mitica | Season " + season;
+        if(carta.getSeason() == 0) {
+            footer = "Carta Mítica | Out of season";
+        } else {
+            footer = "Carta Mítica | Season " + carta.getSeason();
+        }
         return this;
     }
 
 
     public final CartasHelper build(CommandEvent commandEvent) throws CreateCardException {
         title = "¡Carta diaria!";
-        String desc = "Obtuviste: **"+ nombrecarta + "** " + emote;
+        String desc = "Obtuviste: **"+ nombrecarta + "** ";
         if(nombrecarta.isEmpty() || autorcarta.isEmpty() || imagencarta.isEmpty() || emote.isEmpty()) {
             commandEvent.getChannel().sendMessage("Ha ocurrido un error grave").queue();
             String allinfo = "\n" + "NombreCarta: " + nombrecarta + "\n" + "AutorCarta: " + autorcarta + "\n" + "ImagenCarta: <" + imagencarta + ">" + "\n" + "Season: " + season + "\n" + "DataBaseName: " + nombrebasedatos;
@@ -172,7 +197,7 @@ public class CartasHelper {
             desbloqueadas++;
             cartasconfig.set("Desbloqueadas."+commandEvent.getAuthor().getId(),desbloqueadas);
             title = ":sparkles: ¡Carta diaria! :sparkles:";
-            desc = ":unlock: Obtuviste: **"+ nombrecarta + "** " + emote;
+            desc = ":unlock: Obtuviste: **"+ nombrecarta + "** ";
         }
         try {
             cartasconfig.save(Main.cartas);
@@ -198,8 +223,9 @@ public class CartasHelper {
         EmbedBuilder eb = new EmbedBuilder();
         eb.setTitle(title);
         eb.setDescription(desc);
-        eb.setThumbnail(imagencalidad);
-        eb.setImage(imagencarta);
+        //https://cdn.discordapp.com/emojis/871851399628079184.png?size=80
+        eb.setThumbnail("https://cdn.discordapp.com/emojis/"+carta.getEmoteid()+".png?size=80");
+        eb.setImage(carta.getImage());
         eb.setFooter(footer);
         eb.setColor(color);
         commandEvent.getChannel().sendMessageEmbeds(eb.build()).queue();
