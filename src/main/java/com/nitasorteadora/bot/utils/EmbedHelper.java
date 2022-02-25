@@ -4,7 +4,7 @@ import net.dv8tion.jda.api.EmbedBuilder;
 
 import java.awt.*;
 import java.time.Instant;
-
+@Deprecated
 public class EmbedHelper extends EmbedBuilder{
     public EmbedHelper(final EmbedBuilder embedBuilder) {
         super(embedBuilder);
