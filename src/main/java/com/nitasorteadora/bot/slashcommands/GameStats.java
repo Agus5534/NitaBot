@@ -51,6 +51,9 @@ public class GameStats extends SlashCommand {
             } else {
                 event.reply("No hay una partida en curso!").queue();
             }
+        } else {
+            event.reply("No hay una partida en curso!").queue();
+
         }
     }
 
