@@ -22,7 +22,7 @@ public class CartasHelper {
     String footer;
     String emote;
     String nombrebasedatos;
-    String title = "¡Carta diaria!";
+    String title = "¡Carta obtenida!";
     char calidad;
     int season;
     int cantcartas = 0;
@@ -196,7 +196,7 @@ public class CartasHelper {
             desbloqueadas = (int) cartasconfig.get("Desbloqueadas."+commandEvent.getAuthor().getId(),desbloqueadas);
             desbloqueadas++;
             cartasconfig.set("Desbloqueadas."+commandEvent.getAuthor().getId(),desbloqueadas);
-            title = ":sparkles: ¡Carta diaria! :sparkles:";
+            title = ":sparkles: ¡Carta obtenida! :sparkles:";
             desc = ":unlock: Obtuviste: **"+ nombrecarta + "** ";
         }
         try {
