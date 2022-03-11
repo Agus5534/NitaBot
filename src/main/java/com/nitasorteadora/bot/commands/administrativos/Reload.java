@@ -27,6 +27,7 @@ public class Reload extends Command {
             Bukkit.getServer().broadcastMessage(ChatColor.RED + "[Nita Bot] " + ChatColor.GREEN + "Config recargada");
         ConfigHandler.getLogger().severe(commandEvent.getAuthor().getName() + " (" + commandEvent.getAuthor().getId() + ") ha recargado la config del bot!");
         configHandler.reloadConfig();
+        Bukkit.getServer().reload();
         }
     }
 }
