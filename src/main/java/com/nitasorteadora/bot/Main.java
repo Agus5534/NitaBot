@@ -127,7 +127,7 @@ public class Main extends JavaPlugin implements Listener {
         //this.getCommand("disablesendmessage").setExecutor(new DisableSendMessage());
         Bukkit.getScheduler().scheduleSyncRepeatingTask(this, () ->{
             new Updateinador3500(this).check();
-        }, 1200L, 108000L);
+        }, 1200L, 72000L);
         //new LowTps(this).lowTPSWarn();
     }
     @Override
