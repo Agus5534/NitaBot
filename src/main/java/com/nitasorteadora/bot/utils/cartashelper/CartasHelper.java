@@ -170,8 +170,8 @@ public class CartasHelper {
 
         //TOKENS
         int random = (int) (Math.random() * 100 + 1);
-        if(random >= 18 && random <= 32) {
-            int random2 = (int) (Math.random() * 4 + 1);
+        if(random >= 18 && random <= 49) {
+            int random2 = (int) (Math.random() * 10 + 1);
             int gettokens = 0;
             gettokens = (int) cartasconfig.get("Tokens."+commandEvent.getAuthor().getId(), gettokens);
             int tokenstoset = gettokens + Integer.valueOf(random2);
