@@ -202,7 +202,7 @@ public class SobresManager {
             cartasconfig.set("Desbloqueadas."+event.getMember().getId(),desbloqueadas);
         }
         EmbedBuilder eb = new EmbedBuilder();
-        eb.setTitle("¡Carta Diaria!");
+        eb.setTitle("¡Carta obtenida!");
         eb.setDescription("Obtuviste: **"+carta.getName()+"** " + carta.getEmote());
         eb.setImage(carta.getImage());
         eb.setFooter("Carta "+carta.getCalidad().getName() + "| Season " + carta.getSeason());
