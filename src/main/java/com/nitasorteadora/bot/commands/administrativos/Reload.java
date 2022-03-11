@@ -24,7 +24,7 @@ public class Reload extends Command {
         commandEvent.getChannel().sendMessage("Recargando config.yml").queue();
             commandEvent.getChannel().sendMessage("Recargando cartas.yml").queue();
             commandEvent.getChannel().sendMessage("Reload completado!").queue();
-            Bukkit.getServer().broadcastMessage(ChatColor.RED + "[Nita Sorteadora] " + ChatColor.GREEN + "Config recargada");
+            Bukkit.getServer().broadcastMessage(ChatColor.RED + "[Nita Bot] " + ChatColor.GREEN + "Config recargada");
         ConfigHandler.getLogger().severe(commandEvent.getAuthor().getName() + " (" + commandEvent.getAuthor().getId() + ") ha recargado la config del bot!");
         configHandler.reloadConfig();
         }
