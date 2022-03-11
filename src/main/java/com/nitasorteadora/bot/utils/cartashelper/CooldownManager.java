@@ -19,7 +19,7 @@ public class CooldownManager {
     }
 
     public static void setCooldown(long id) {
-        long cooldown = System.currentTimeMillis() + 21600000;
+        long cooldown = System.currentTimeMillis() + 14400000;
         cooldownsconfig.set("Cooldown.Dailycard."+id,cooldown);
         save();
     }

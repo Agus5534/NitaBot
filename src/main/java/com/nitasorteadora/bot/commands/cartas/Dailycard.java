@@ -12,7 +12,6 @@ import java.awt.*;
 import java.util.concurrent.TimeUnit;
 
 import static com.nitasorteadora.bot.utils.cartashelper.CooldownManager.*;
-import static com.nitasorteadora.bot.utils.cartashelper.RemovedReset.resetdawe;
 import static com.nitasorteadora.bot.utils.lucksystem.LuckManager.checkLuck;
 
 public class Dailycard extends Command {
@@ -35,7 +34,6 @@ public class Dailycard extends Command {
            if(!hasCooldown(commandEvent.getAuthor().getIdLong())) {
                setCooldown(commandEvent.getAuthor().getIdLong());
                checkLuck(commandEvent);
-               resetdawe(commandEvent);
                int random = (int) (Math.random() * 75 + 1);
                if(random <= 37) {
                    Season1.CartasS1(commandEvent);
