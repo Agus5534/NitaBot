@@ -18,7 +18,3 @@ commands:
       - acclink
       - acc
       - account
-  disablesendmessage:
-    description: Comando para deshabilitar el Slash Command /send
-    usage: /<command>
-    permission: nitabot.command.disablesendmessage

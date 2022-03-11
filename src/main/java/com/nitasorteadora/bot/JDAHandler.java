@@ -17,7 +17,10 @@ import com.nitasorteadora.bot.commands.utils.LinkAccount;
 import com.nitasorteadora.bot.commands.utils.Profile;
 import com.nitasorteadora.bot.listeners.GuildMemberJoin;
 import com.nitasorteadora.bot.listeners.SelectionMenu;
-import com.nitasorteadora.bot.slashcommands.*;
+import com.nitasorteadora.bot.slashcommands.Dbedit;
+import com.nitasorteadora.bot.slashcommands.GameStats;
+import com.nitasorteadora.bot.slashcommands.Perfil;
+import com.nitasorteadora.bot.slashcommands.bola8;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
@@ -132,7 +135,7 @@ public class JDAHandler {
         SlashSet.add(new Perfil());
         SlashSet.add(new com.nitasorteadora.bot.slashcommands.Sobres());
         SlashSet.add(new GameStats());
-        SlashSet.add(new SendMessage());
+      //  SlashSet.add(new SendMessage());
         SlashSet.forEach(commandClient::addSlashCommand);
     }
 

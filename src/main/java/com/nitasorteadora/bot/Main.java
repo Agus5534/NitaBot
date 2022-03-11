@@ -2,7 +2,6 @@ package com.nitasorteadora.bot;
 
 
 import com.jagrosh.jdautilities.command.CommandEvent;
-import com.nitasorteadora.bot.minecraft.commands.DisableSendMessage;
 import com.nitasorteadora.bot.minecraft.commands.Verificar;
 import com.nitasorteadora.bot.minecraft.events.DeathEvent;
 import com.nitasorteadora.bot.minecraft.events.JoinEvent;
@@ -125,7 +124,7 @@ public class Main extends JavaPlugin implements Listener {
         pm.registerEvents(new JoinEvent(this), this);
         pm.registerEvents(new DeathEvent(),this);
         this.getCommand("verificar").setExecutor(new Verificar());
-        this.getCommand("disablesendmessage").setExecutor(new DisableSendMessage());
+        //this.getCommand("disablesendmessage").setExecutor(new DisableSendMessage());
         Bukkit.getScheduler().scheduleSyncRepeatingTask(this, () ->{
             new Updateinador3500(this).check();
         }, 1200L, 108000L);
