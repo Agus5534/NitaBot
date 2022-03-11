@@ -4,6 +4,7 @@ import com.jagrosh.jdautilities.command.Command;
 import com.jagrosh.jdautilities.command.CommandEvent;
 import com.nitasorteadora.bot.JDAHandler;
 import com.nitasorteadora.bot.cartas.embeds.CartaC;
+import net.dv8tion.jda.annotations.ForRemoval;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Member;
 
@@ -12,7 +13,8 @@ import java.awt.*;
 import static com.nitasorteadora.bot.Main.cartasconfig;
 import static com.nitasorteadora.bot.utils.cartashelper.CartasData.totaldesbloqueadas;
 import static com.nitasorteadora.bot.utils.cartashelper.RemovedReset.resetdawe;
-
+@ForRemoval
+@Deprecated
 public class Cartas extends Command {
     public Cartas() {
         this.name = "cartas";

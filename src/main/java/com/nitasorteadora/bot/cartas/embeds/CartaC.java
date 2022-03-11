@@ -24,7 +24,6 @@ public enum CartaC {
     SALVADOR("El Impaciente","Salvi","<:Salvador:819332288759332864>","https://cdn.discordapp.com/attachments/818613273813319781/873350979045711943/1elimpaciente.jpg","CartaSalvi.",2,CalidadC.RARA,"819332288759332864"),
     AZGALORD("La Tele","Azga","<:Azgalord:879875183572287518>","https://cdn.discordapp.com/attachments/818613273813319781/879874891472588860/1latele.jpg","CartaAzga.",3,CalidadC.RARA,"879875183572287518"),
     HEIS("El Sicario","Heis","<:Heis:864214891493326878>","https://cdn.discordapp.com/attachments/818613273813319781/879509720266862662/1elsicario.jpg","CartaHeis.",3,CalidadC.RARA,"864214891493326878"),
-    INFERNAL("El Loco","Infernal","<:Infernal:864214891149262859>","https://cdn.discordapp.com/attachments/818613273813319781/879874620407300096/1elloco.jpg","CartaInfer.",3,CalidadC.RARA,"864214891149262859"),
     MARIO("El Pokemaníaco","Mario","<:Mario:864214891283349505>","https://cdn.discordapp.com/attachments/818613273813319781/884575253915926588/1elpokemaniaco.jpg","CartaMario.",3,CalidadC.RARA,"864214891283349505"),
     YURI("El Valerense","Yuri","<:Yuri:864214891538677780>","https://cdn.discordapp.com/attachments/818613273813319781/879874807427104768/elvarelense.jpg","CartaYuri.",3,CalidadC.RARA,"864214891538677780"),
     CARMENED("El Espontáneo","Carmened","<:Carmened:935644590441107556>","https://cdn.discordapp.com/attachments/818995908779835393/936805180731699230/1elespontaneo.jpg","CartaCarmened.",0,CalidadC.RARA,"935644590441107556"),

@@ -1,36 +1,38 @@
 package com.nitasorteadora.bot.utils.cartashelper;
 
 import com.jagrosh.jdautilities.command.CommandEvent;
+import com.nitasorteadora.bot.Main;
 import net.dv8tion.jda.api.entities.Member;
 
+import java.io.IOException;
+
+import static com.nitasorteadora.bot.Main.cartasconfig;
+
 public class RemovedReset {
-    public static void removeCarta(String dbName, int cartacant, int tokenpercard, CommandEvent commandEvent, String cardName) {
-        /*cartasconfig.set(dbName+commandEvent.getAuthor().getId(),0);
-        int desbloqueadas = 0;
-        int total = 0;
-        int tokens = 0;
-        tokens = (int) cartasconfig.get("Tokens."+commandEvent.getMessage().getAuthor().getId(), tokens);
-        total = (int) cartasconfig.get("Total."+commandEvent.getMessage().getAuthor().getId(),total);
-        desbloqueadas = (int) cartasconfig.get("Desbloqueadas."+commandEvent.getMessage().getAuthor().getId(),desbloqueadas);
-        desbloqueadas--;
-        cartasconfig.set("Desbloqueadas."+commandEvent.getAuthor().getId(),desbloqueadas);
-        int newtotal = total - cartacant;
-        cartasconfig.set("Total."+commandEvent.getAuthor().getId(),newtotal);
-        int tokenstogive = tokens + (cartacant * tokenpercard);
-        cartasconfig.set("Tokens."+commandEvent.getAuthor().getId(),tokenstogive);
-        try {
-            commandEvent.getJDA().openPrivateChannelById(commandEvent.getAuthor().getId()).complete().sendMessage("Se te han eliminado del inventario " + cartacant + " **" + cardName + "**! A cambio recibiste " + cartacant * tokenpercard + " tokens").queue();
-        } catch (Exception e) {
-            return;
-        }
-        try{
-            cartasconfig.save(Main.cartas);
+
+    public void removeCarta(String dbName,CommandEvent commandEvent) {
+        int cartacant = 0;
+        cartacant = (int) cartasconfig.get(dbName+commandEvent.getAuthor().getId(),cartacant);
+        cartasconfig.set(dbName+commandEvent.getAuthor().getId(),0);
+        if(cartacant >= 1) {
+            int desbloqueadas = 0;
+            int total = 0;
+            int tokens = 0;
+            total = (int) cartasconfig.get("Total."+commandEvent.getMessage().getAuthor().getId(),total);
+            desbloqueadas = (int) cartasconfig.get("Desbloqueadas."+commandEvent.getMessage().getAuthor().getId(),desbloqueadas);
+            desbloqueadas--;
+            cartasconfig.set("Desbloqueadas."+commandEvent.getAuthor().getId(),desbloqueadas);
+            int newtotal = total - cartacant;
+            cartasconfig.set("Total."+commandEvent.getAuthor().getId(),newtotal);
+            try{
+                cartasconfig.save(Main.cartas);
 
 
-        } catch (IOException e){
-            e.printStackTrace();
+            } catch (IOException e){
+                e.printStackTrace();
+            }
         }
-*/
+
     }
     public static void resetdawe(CommandEvent commandEvent) {
        /* int cartasdawe = 0;

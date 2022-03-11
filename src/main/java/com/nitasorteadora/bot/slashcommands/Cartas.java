@@ -75,7 +75,6 @@ public class Cartas extends SlashCommand {
         int ctatu = 0;
         int cazga = 0;
         int cheis = 0;
-        int cinfer = 0;
         int cmario = 0;
         int cyuri = 0;
         int cagus5534 = 0;
@@ -117,7 +116,6 @@ public class Cartas extends SlashCommand {
         ctatu = (int) cartasconfig.get("CartaTatu."+target.getId(),ctatu);
         cazga = (int) cartasconfig.get("CartaAzga."+target.getId(),cazga);
         cheis = (int) cartasconfig.get("CartaHeis."+target.getId(),cheis);
-        cinfer = (int) cartasconfig.get("CartaInfer."+target.getId(),cinfer);
         cmario = (int) cartasconfig.get("CartaMario."+target.getId(),cmario);
         cyuri = (int) cartasconfig.get("CartaYuri."+target.getId(),cyuri);
         cagus5534 = (int) cartasconfig.get("CartaAgus5534."+target.getId(),cagus5534);
@@ -151,7 +149,6 @@ public class Cartas extends SlashCommand {
         String salvi = "El Impaciente: " + csalvi;
         String pato = "El Discreto: " + cpato;
         String heis = "El Sicario: " + cheis;
-        String infer = "El Loco: " + cinfer;
         String azga = "La Tele: " + cazga;
         String yuri = "El Varelense: " + cyuri;
         String mario = "El Pokemaníaco: " + cmario;
@@ -160,7 +157,7 @@ public class Cartas extends SlashCommand {
         String hermes = CartaC.HERMES.getName() +": " + chermes;
         String zapata = CartaC.ZAPATA.getName() +": " + czapata;
 
-        String raras = cuchi + "\n " + uimpi  + "\n "  + salvi + "\n " + pato +  "\n " + heis + "\n " + infer + "\n " + azga + "\n " + yuri + "\n " + mario + "\n " + fabo + "\n " + carmened + "\n" + hermes + "\n" + zapata;
+        String raras = cuchi + "\n " + uimpi  + "\n "  + salvi + "\n " + pato +  "\n " + heis + "\n " + azga + "\n " + yuri + "\n " + mario + "\n " + fabo + "\n " + carmened + "\n" + hermes + "\n" + zapata;
 
 
         String nita = "La Artista: " + cnita;

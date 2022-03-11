@@ -5,16 +5,13 @@ import com.nitasorteadora.bot.commands.administrativos.Backup;
 import com.nitasorteadora.bot.commands.administrativos.DevOnly;
 import com.nitasorteadora.bot.commands.administrativos.GiveToken;
 import com.nitasorteadora.bot.commands.administrativos.Reload;
-import com.nitasorteadora.bot.commands.cartas.Cartas;
 import com.nitasorteadora.bot.commands.cartas.Dailycard;
-import com.nitasorteadora.bot.commands.extra.Cumples;
 import com.nitasorteadora.bot.commands.teams.Addteam;
 import com.nitasorteadora.bot.commands.teams.AnnounceTeams;
 import com.nitasorteadora.bot.commands.teams.Borrar;
 import com.nitasorteadora.bot.commands.teams.ClearTeams;
 import com.nitasorteadora.bot.commands.utils.Comandos;
 import com.nitasorteadora.bot.commands.utils.LinkAccount;
-import com.nitasorteadora.bot.commands.utils.Profile;
 import com.nitasorteadora.bot.listeners.GuildMemberJoin;
 import com.nitasorteadora.bot.listeners.SelectionMenu;
 import com.nitasorteadora.bot.slashcommands.Dbedit;
@@ -94,7 +91,7 @@ public class JDAHandler {
         }
     }
     private void initializeCommandClientBuilder(CommandClientBuilder builder) {builder.setPrefix("w/");
-        builder.setActivity(Activity.playing("??/37"));
+        builder.setActivity(Activity.playing("La entidad los obs...."));
         builder.setCoOwnerIds("247001108038418434", "222859650360541185", "247927675044233216","475432942215102465","326879991629479936","508118875192426516");
         builder.setStatus(OnlineStatus.ONLINE);
         builder.setOwnerId(ConfigHandler.getAdmin(0));
@@ -116,9 +113,8 @@ public class JDAHandler {
        commandSet.add(new ClearTeams());
        commandSet.add(new Reload(configHandler));
        commandSet.add(new Borrar());
-       commandSet.add(new Profile(plugin));
-       commandSet.add(new Cumples(plugin));
-       commandSet.add(new Cartas());
+      // commandSet.add(new Profile(plugin));
+       //commandSet.add(new Cumples(plugin));
        commandSet.add(new Backup());
        commandSet.add(new GiveToken());
         commandSet.add(new DevOnly());
