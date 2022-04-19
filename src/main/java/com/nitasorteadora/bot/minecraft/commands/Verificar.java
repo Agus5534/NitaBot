@@ -8,8 +8,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import static com.nitasorteadora.bot.Main.*;
-import static com.nitasorteadora.bot.commands.utils.LinkAccount.uuidCodeMap;
-import static com.nitasorteadora.bot.commands.utils.LinkAccount.uuidIdMap;
+import static com.nitasorteadora.bot.slashcommands.Verify.uuidCodeMap;
+import static com.nitasorteadora.bot.slashcommands.Verify.uuidIdMap;
 
 public class Verificar implements CommandExecutor {
     @Override

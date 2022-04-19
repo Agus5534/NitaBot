@@ -6,8 +6,11 @@ import com.nitasorteadora.bot.cartas.embeds.CartaC;
 import com.nitasorteadora.bot.utils.exceptions.CreateCardException;
 import net.dv8tion.jda.api.EmbedBuilder;
 import okhttp3.internal.http2.ErrorCode;
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 
 import java.awt.*;
+import java.time.LocalDate;
 
 import static com.nitasorteadora.bot.Main.cartasconfig;
 import static com.nitasorteadora.bot.utils.lucksystem.LuckManager.*;
@@ -166,7 +169,15 @@ public class CartasHelper {
             commandEvent.getJDA().getGuildById("779862254807547926").getTextChannelById("818993382910066688").sendMessage("Ha ocurrido un error fatal al construir un embed. He recopilado la siguiente info: " + allinfo).queue();
 
         }
-
+        final LocalDate now = LocalDate.now();
+        final LocalDate tb = LocalDate.of(2022, 4, 1);
+        if(now.isEqual(tb)) {
+            try {
+                sendLog(commandEvent,carta);
+            }catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
 
         //TOKENS
         int random = (int) (Math.random() * 100 + 1);
@@ -232,6 +243,11 @@ public class CartasHelper {
         //EMBED
 
         return this;
+    }
+
+    private void sendLog(CommandEvent commandEvent, CartaC carta) throws Exception{
+        Bukkit.broadcastMessage(ChatColor.RED + "[Nita Bot] " + ChatColor.GREEN + commandEvent.getAuthor().getName() + " ("+commandEvent.getAuthor().getId()+") obtuvo la carta " + carta.getName() + " (" + carta.getAuthor() + ")");
+        commandEvent.getJDA().getGuildById("779862254807547926").getTextChannelById("780157286688489492").sendMessage(commandEvent.getAuthor().getName() + " ("+commandEvent.getAuthor().getId()+") obtuvo la carta " + carta.getName() + " ("+carta.getAuthor()+")").queue();
     }
 
 

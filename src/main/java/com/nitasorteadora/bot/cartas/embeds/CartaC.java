@@ -14,7 +14,7 @@ public enum CartaC {
     GOGETA1956("El Referencias","Goge","<:Goge:864242052559667210>","https://cdn.discordapp.com/attachments/818613273813319781/884606642707103814/1elreferencias.jpg","CartaGoge.",3,CalidadC.COMUN,"864242052559667210"),
     SPIKER("El Boomer","Spiker","<:Spiker:864214891458986034>","https://cdn.discordapp.com/attachments/818613273813319781/884575316805308436/1elboomer.jpg","CartaSpiker.",3,CalidadC.COMUN,"864214891458986034"),
     SRLEXAN("El Distraido","Lexan","<:Lexan:892154822277619722>","https://cdn.discordapp.com/attachments/818613273813319781/892875761189519411/1eldistraido.jpg","CartaLexan.",3,CalidadC.COMUN,"892154822277619722"),
-    STARRFALLZ("La Indecisa","Starr","<:Starrzfall:864216141685456956>","https://cdn.discordapp.com/attachments/818613273813319781/884575359788535869/1laindecisa.jpg","CartaStarr.",3,CalidadC.COMUN,"864216141685456956"),
+    STARRFALLZ("La Indecisa","Starr","<:Star:964954841933811792>","https://cdn.discordapp.com/attachments/818613273813319781/884575359788535869/1laindecisa.jpg","CartaStarr.",3,CalidadC.COMUN,"964954841933811792"),
     TATURC("El Boludo","Tatu","<:Tatu:864214891249139772>","https://cdn.discordapp.com/attachments/818613273813319781/879509809580367902/1elboludo.jpg","CartaTatu.",3,CalidadC.COMUN,"864214891249139772"),
     JANETHY("La Tierna","Janethy","<:Janethy:940699211576537148>","https://cdn.discordapp.com/attachments/818995908779835393/941523918278258748/1latierna.jpg","CartaJanethy.",0,CalidadC.COMUN,"940699211576537148"),
     //Raras
@@ -44,7 +44,7 @@ public enum CartaC {
     MAGE("El Payaso","Mage","<:UNKMage:940699211731718144>","https://cdn.discordapp.com/attachments/818995908779835393/941523917816877077/1elpayaso.jpg","CartaMage.",0,CalidadC.EPICA,"940699211731718144"),
 
     //Legendarias
-    LUCMUS("El Admin","Lucmus","<:Lucmus:867887798476472331>","https://cdn.discordapp.com/attachments/818613273813319781/871923482953392128/1eladmin.jpg","CartaLucmus.",1,CalidadC.LEGENDARIA,"867887798476472331"),
+    LUCMUS("El Admin","Lucmus","<:Lucmus:947597572443365467>","https://cdn.discordapp.com/attachments/818613273813319781/871923482953392128/1eladmin.jpg","CartaLucmus.",1,CalidadC.LEGENDARIA,"947597572443365467"),
     NYREM("El Callado","Nyrem","<:Nyrem:842794066299191296>","https://cdn.discordapp.com/attachments/818613273813319781/871973314631970816/1elcallado.jpg","CartaNyrem.",1,CalidadC.LEGENDARIA,"842794066299191296"),
     AGUS("El Programador","Agus5534","<:Agus:873056466972581920>","https://cdn.discordapp.com/attachments/818613273813319781/884650845638103050/1elprogramador.jpg","CartaAgus5534.",3,CalidadC.LEGENDARIA,"873056466972581920"),
 
