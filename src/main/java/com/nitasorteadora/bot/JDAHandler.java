@@ -65,7 +65,7 @@ public class JDAHandler {
             jdaBuilder.addEventListeners(new GuildMemberJoin());
             jdaBuilder.addEventListeners(new SelectionMenu());
             jda = jdaBuilder.build();
-
+            //jda.deleteCommandById()
 
         } catch (IllegalArgumentException | LoginException e) {
             System.out.println("NitaSorteadora: El token es inválido!");
@@ -81,9 +81,10 @@ public class JDAHandler {
                 addSlashCommands(commandClient);
                 jda.addEventListener(commandClient);
 
-
-
-
+                //OBTENER ID DE TODOS LOS COMANDOS
+            /*for(int i = 0; i < jda.retrieveCommands().complete().size(); i++) {
+                System.out.println(jda.retrieveCommands().complete().get(i));
+            }*/
         }
     }
     private void initializeCommandClientBuilder(CommandClientBuilder builder) {builder.setPrefix("w/");
@@ -117,7 +118,6 @@ public class JDAHandler {
      //   commandSet.add(new LinkAccount());
         //commandSet.add(new UnlockedChecker());
         commandSet.forEach(commandClient::addCommand);
-
     }
     private void addSlashCommands(CommandClient commandClient) {
         SlashSet.add(new bola8());
@@ -127,7 +127,8 @@ public class JDAHandler {
         SlashSet.add(new Perfil());
         SlashSet.add(new com.nitasorteadora.bot.slashcommands.Sobres());
         SlashSet.add(new GameStats());
-        SlashSet.add(new Verify());
+        SlashSet.add(new Verify(plugin));
+
       //  SlashSet.add(new SendMessage());
         SlashSet.forEach(commandClient::addSlashCommand);
     }

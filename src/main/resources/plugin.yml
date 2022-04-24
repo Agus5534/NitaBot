@@ -4,6 +4,8 @@ version: 2.2.0
 description: Bot del weekend!
 api-version: 1.16
 author: Agus5534
+depend:
+  - UHCWeekendListener
 commands:
   verificar:
     description: Comando para linkear el bot de Discord con el Minecraft

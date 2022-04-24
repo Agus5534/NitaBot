@@ -1,6 +1,7 @@
 package com.nitasorteadora.bot.slashcommands;
 
 import com.jagrosh.jdautilities.command.SlashCommand;
+import com.nitasorteadora.bot.Main;
 import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
@@ -15,13 +16,16 @@ import java.util.UUID;
 import static com.nitasorteadora.bot.Main.accountsconfig;
 
 public class Verify extends SlashCommand {
+    Main plugin;
+
     public static HashMap<UUID,String>uuidCodeMap = new HashMap<>();
     public static HashMap<UUID,String> uuidIdMap = new HashMap<>();
-    public Verify() {
+    public Verify(Main plugin) {
+        this.plugin = plugin;
         this.name = "verificar";
         this.help = "Verificate en el bot y en el servidor!";
         List<OptionData> options = new ArrayList<>();
-        options.add(new OptionData(OptionType.USER,"usuario","Tu nombre en Minecraft para verificarte").setRequired(true));
+        options.add(new OptionData(OptionType.STRING,"usuario","Tu nombre en Minecraft para verificarte").setRequired(true));
         this.options = options;
     }
 
@@ -34,7 +38,7 @@ public class Verify extends SlashCommand {
                 if(target == null) {
                     event.reply("No se ha encontrado a ese usuario!").setEphemeral(true).queue();
                 } else {
-                    Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "whitelist add " + user);
+                    Bukkit.getScheduler().scheduleSyncDelayedTask(plugin, ()-> Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "whitelist add " + user), 10L);
                     String randomCode = getRandomAlphaNumeric(7);
                     uuidCodeMap.put(target.getUniqueId(), randomCode);
                     uuidIdMap.put(target.getUniqueId(), event.getMember().getId());

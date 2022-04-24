@@ -13,6 +13,7 @@ sourceSets {
     }
 }
 repositories {
+    mavenLocal()
     mavenCentral()
     maven {
         url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
@@ -35,6 +36,7 @@ dependencies {
     implementation "net.dv8tion:JDA:4.4.0_351"
     implementation "pw.chew:jda-chewtils:1.23.0"
     implementation 'mysql:mysql-connector-java:8.0.27'
+    implementation 'io.github.agus5534:UHCWeekendListener:1.0.0'
 }
 
 
