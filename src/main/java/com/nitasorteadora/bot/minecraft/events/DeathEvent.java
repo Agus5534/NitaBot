@@ -1,6 +1,7 @@
 package com.nitasorteadora.bot.minecraft.events;
 
-import com.nitasorteadora.bot.utils.PrizeManager;
+import io.github.agus5534.uhcweekendlistener.events.player.PlayerGiveTokensEvent;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -11,7 +12,8 @@ public class DeathEvent implements Listener {
     public void onDeath(PlayerDeathEvent event) {
    if(event.getEntity().getKiller() instanceof Player) {
        Player player = event.getEntity().getKiller();
-        new PrizeManager().giveTokens(player, 3);
+       PlayerGiveTokensEvent pgvt = new PlayerGiveTokensEvent(player, 2, "§aRecibiste 2 tokens por tu kill!");
+       Bukkit.getPluginManager().callEvent(pgvt);
    }
 }
 

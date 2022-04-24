@@ -5,6 +5,7 @@ import com.jagrosh.jdautilities.command.CommandEvent;
 import com.nitasorteadora.bot.minecraft.commands.Verificar;
 import com.nitasorteadora.bot.minecraft.events.DeathEvent;
 import com.nitasorteadora.bot.minecraft.events.JoinEvent;
+import com.nitasorteadora.bot.minecraft.events.PlayerGiveTokens;
 import com.nitasorteadora.bot.utils.sql.SqlConnector;
 import com.nitasorteadora.bot.utils.version.Updateinador3500;
 import net.dv8tion.jda.api.EmbedBuilder;
@@ -123,6 +124,7 @@ public class Main extends JavaPlugin implements Listener {
         PluginManager pm = Bukkit.getServer().getPluginManager();
         pm.registerEvents(new JoinEvent(this), this);
         pm.registerEvents(new DeathEvent(),this);
+        pm.registerEvents(new PlayerGiveTokens(),this);
         this.getCommand("verificar").setExecutor(new Verificar());
         //this.getCommand("disablesendmessage").setExecutor(new DisableSendMessage());
         Bukkit.getScheduler().scheduleSyncRepeatingTask(this, () ->{

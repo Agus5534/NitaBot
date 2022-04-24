@@ -1,7 +1,6 @@
 package com.nitasorteadora.bot.utils;
 
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.Objective;
@@ -56,7 +55,7 @@ public class PrizeManager {
                   tokens = (int) cartasconfig.get("Tokens."+getID(player),tokens);
                   tokens = tokens + award;
                   cartasconfig.set("Tokens."+getID(player),tokens);
-                  player.sendMessage(ChatColor.RED + "[Nita Bot]" + ChatColor.GOLD + " Recibiste "+award+" tokens");
+                  //player.sendMessage(ChatColor.RED + "[Nita Bot]" + ChatColor.GOLD + " Recibiste "+award+" tokens");
                   save();
                 }
             }
