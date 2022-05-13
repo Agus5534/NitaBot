@@ -128,6 +128,7 @@ public class JDAHandler {
         SlashSet.add(new com.nitasorteadora.bot.slashcommands.Sobres());
         SlashSet.add(new GameStats());
         SlashSet.add(new Verify(plugin));
+        SlashSet.add(new Dailymod());
 
       //  SlashSet.add(new SendMessage());
         SlashSet.forEach(commandClient::addSlashCommand);
