@@ -37,6 +37,7 @@ dependencies {
     implementation "pw.chew:jda-chewtils:1.23.0"
     implementation 'mysql:mysql-connector-java:8.0.27'
     implementation 'io.github.agus5534:UHCWeekendListener:1.0.0'
+    implementation 'com.google.code.gson:gson:2.9.0'
 }
 
 
